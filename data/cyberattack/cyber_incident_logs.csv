@@ -1,0 +1,151 @@
+timestamp,source,severity,event_type,user,source_ip,host,message,is_suspicious,attack_stage
+2026-11-11 09:00:04,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:00:37,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:01:01,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:01:25,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:01:37,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:01:39,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:01:42,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:02:24,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:02:35,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:02:37,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:02:38,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:02:46,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:02:48,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:02:54,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:03:03,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:03:18,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:03:59,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:03:59,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:04:02,AUTH,WARNING,login_failed,employee1,198.51.100.77,IDP-01,Failed login attempt for employee1.,1,initial_access_indicator
+2026-11-11 09:04:08,AUTH,WARNING,login_failed,employee1,198.51.100.77,IDP-01,Second failed login attempt for employee1.,1,initial_access_indicator
+2026-11-11 09:04:12,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:04:15,AUTH,WARNING,login_failed,employee1,198.51.100.77,IDP-01,Third failed login attempt for employee1.,1,initial_access_indicator
+2026-11-11 09:04:16,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:04:30,SYSTEM,INFO,routine_activity,employee2,10.0.0.22,WS-FIN-02,Routine document access completed.,0,normal
+2026-11-11 09:04:32,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:05:01,AUTH,WARNING,login_success,employee1,198.51.100.77,IDP-01,Successful login after repeated failures; source is unfamiliar in this simulation.,1,account_access_indicator
+2026-11-11 09:05:03,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:05:16,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:05:20,SYSTEM,INFO,routine_activity,employee3,10.0.0.22,WS-HR-03,Routine authentication token refreshed.,0,normal
+2026-11-11 09:05:23,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:05:26,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:05:29,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:05:29,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:06:03,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:06:06,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:06:10,ENDPOINT,WARNING,privilege_change,employee1,-,WS-ENG-07,Unexpected privilege change recorded for employee1.,1,privilege_change_indicator
+2026-11-11 09:06:14,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:06:35,SYSTEM,INFO,routine_activity,analyst,10.0.0.22,WS-ANALYST-01,Analyst opened monitoring console.,0,normal
+2026-11-11 09:06:41,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:06:42,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:06:45,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:06:59,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:07:03,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:07:04,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:07:04,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:07:05,ENDPOINT,WARNING,process_start,employee1,-,WS-ENG-07,Unusual unsigned test process launched in the simulation.,1,endpoint_indicator
+2026-11-11 09:07:08,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:07:12,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:07:37,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:07:37,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:07:43,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:07:47,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:07:52,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:08:04,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:08:09,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:08:20,FIREWALL,ALERT,connection_anomaly,-,203.0.113.44,FW-EDGE-01,Unusual outbound connection volume observed.,1,command_and_control_indicator
+2026-11-11 09:08:45,SYSTEM,INFO,routine_activity,employee2,10.0.0.22,WS-FIN-02,Routine internal file synchronization completed.,0,normal
+2026-11-11 09:08:59,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:08:59,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:09:03,NETWORK,ALERT,transfer_anomaly,employee1,203.0.113.44,NET-MON-01,Outbound data transfer exceeds this synthetic environment's baseline.,1,possible_exfiltration_indicator
+2026-11-11 09:09:27,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:09:40,SYSTEM,WARNING,account_lock_review,employee1,-,IDP-01,Security review flag raised for employee1 account.,1,response_indicator
+2026-11-11 09:10:05,SYSTEM,INFO,routine_activity,employee3,10.0.0.22,WS-HR-03,Routine logout completed.,0,normal
+2026-11-11 09:10:31,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:11:48,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:11:54,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:12:00,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:12:07,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:12:17,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:12:23,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:12:38,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:12:56,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:13:11,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:13:14,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:13:26,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:13:42,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:13:57,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:14:07,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:14:15,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:14:51,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:14:57,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:15:13,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:16:15,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:16:16,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:16:48,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:16:58,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:16:58,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:17:08,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:17:16,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:17:28,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:17:46,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:17:49,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:18:12,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:18:17,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:18:30,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:18:33,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:19:01,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:19:04,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:19:12,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:19:16,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:19:40,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:20:07,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:20:10,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:20:53,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:21:27,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:21:30,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:21:31,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:21:41,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:21:41,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:21:45,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:21:47,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:21:55,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:21:56,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:22:19,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:22:27,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:22:59,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:23:17,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:23:20,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:23:29,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:23:34,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:23:56,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:24:08,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:24:17,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:24:18,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:24:21,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:24:46,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:24:51,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:25:20,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:25:30,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:25:55,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:26:00,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:26:04,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:26:40,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:26:40,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:26:49,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:27:00,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:27:07,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:27:14,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:27:21,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:27:38,DNS,INFO,dns_query,employee3,10.0.0.41,WS-HR-03,Internal DNS query completed.,0,normal
+2026-11-11 09:27:40,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:27:46,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:28:03,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:28:36,AUTH,INFO,login_success,analyst,10.0.0.14,WS-ANALYST-01,Routine user login successful.,0,normal
+2026-11-11 09:28:53,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:28:55,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:29:00,SYSTEM,INFO,service_health,-,10.0.0.5,SRV-APP-01,Service health check passed.,0,normal
+2026-11-11 09:29:16,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal
+2026-11-11 09:29:36,FIREWALL,INFO,connection_allowed,-,10.0.0.35,FW-EDGE-01,Outbound connection allowed by policy.,0,normal
+2026-11-11 09:29:48,ENDPOINT,INFO,process_start,employee2,10.0.0.22,WS-FIN-02,Approved office application started.,0,normal

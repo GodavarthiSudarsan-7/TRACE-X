@@ -1,0 +1,166 @@
+{
+  "tool": "TRACE-X Log Investigator (rule-based prototype)",
+  "records_analyzed": 150,
+  "flagged_records": 8,
+  "findings": [
+    "Repeated authentication failures were observed for an account/source combination.",
+    "A successful login followed repeated failures within the configured 10-minute window.",
+    "An account privilege or permission change was recorded.",
+    "Potentially unusual endpoint process activity was recorded.",
+    "Unusual outbound network or data-transfer activity was recorded."
+  ],
+  "flagged_events": [
+    {
+      "row": 19,
+      "timestamp": "2026-11-11 09:04:02",
+      "source": "AUTH",
+      "severity": "WARNING",
+      "event_type": "login_failed",
+      "user": "employee1",
+      "source_ip": "198.51.100.77",
+      "host": "IDP-01",
+      "message": "Failed login attempt for employee1.",
+      "heuristic_score": 3,
+      "reasons": [
+        "Repeated failed logins for same account/source"
+      ]
+    },
+    {
+      "row": 20,
+      "timestamp": "2026-11-11 09:04:08",
+      "source": "AUTH",
+      "severity": "WARNING",
+      "event_type": "login_failed",
+      "user": "employee1",
+      "source_ip": "198.51.100.77",
+      "host": "IDP-01",
+      "message": "Second failed login attempt for employee1.",
+      "heuristic_score": 3,
+      "reasons": [
+        "Repeated failed logins for same account/source"
+      ]
+    },
+    {
+      "row": 22,
+      "timestamp": "2026-11-11 09:04:15",
+      "source": "AUTH",
+      "severity": "WARNING",
+      "event_type": "login_failed",
+      "user": "employee1",
+      "source_ip": "198.51.100.77",
+      "host": "IDP-01",
+      "message": "Third failed login attempt for employee1.",
+      "heuristic_score": 3,
+      "reasons": [
+        "Repeated failed logins for same account/source"
+      ]
+    },
+    {
+      "row": 26,
+      "timestamp": "2026-11-11 09:05:01",
+      "source": "AUTH",
+      "severity": "WARNING",
+      "event_type": "login_success",
+      "user": "employee1",
+      "source_ip": "198.51.100.77",
+      "host": "IDP-01",
+      "message": "Successful login after repeated failures; source is unfamiliar in this simulation.",
+      "heuristic_score": 4,
+      "reasons": [
+        "Successful login within 10 minutes of repeated failures"
+      ]
+    },
+    {
+      "row": 36,
+      "timestamp": "2026-11-11 09:06:10",
+      "source": "ENDPOINT",
+      "severity": "WARNING",
+      "event_type": "privilege_change",
+      "user": "employee1",
+      "source_ip": "-",
+      "host": "WS-ENG-07",
+      "message": "Unexpected privilege change recorded for employee1.",
+      "heuristic_score": 4,
+      "reasons": [
+        "Account privilege or permission change"
+      ]
+    },
+    {
+      "row": 46,
+      "timestamp": "2026-11-11 09:07:05",
+      "source": "ENDPOINT",
+      "severity": "WARNING",
+      "event_type": "process_start",
+      "user": "employee1",
+      "source_ip": "-",
+      "host": "WS-ENG-07",
+      "message": "Unusual unsigned test process launched in the simulation.",
+      "heuristic_score": 3,
+      "reasons": [
+        "Potentially unusual endpoint process activity"
+      ]
+    },
+    {
+      "row": 56,
+      "timestamp": "2026-11-11 09:08:20",
+      "source": "FIREWALL",
+      "severity": "ALERT",
+      "event_type": "connection_anomaly",
+      "user": "-",
+      "source_ip": "203.0.113.44",
+      "host": "FW-EDGE-01",
+      "message": "Unusual outbound connection volume observed.",
+      "heuristic_score": 4,
+      "reasons": [
+        "Unusual outbound network or data-transfer activity"
+      ]
+    },
+    {
+      "row": 60,
+      "timestamp": "2026-11-11 09:09:03",
+      "source": "NETWORK",
+      "severity": "ALERT",
+      "event_type": "transfer_anomaly",
+      "user": "employee1",
+      "source_ip": "203.0.113.44",
+      "host": "NET-MON-01",
+      "message": "Outbound data transfer exceeds this synthetic environment's baseline.",
+      "heuristic_score": 4,
+      "reasons": [
+        "Unusual outbound network or data-transfer activity"
+      ]
+    }
+  ],
+  "entity_pivots": {
+    "user:employee1": [
+      19,
+      20,
+      22,
+      26,
+      36,
+      46,
+      60
+    ],
+    "source_ip:198.51.100.77": [
+      19,
+      20,
+      22,
+      26
+    ],
+    "host:IDP-01": [
+      19,
+      20,
+      22,
+      26
+    ],
+    "host:WS-ENG-07": [
+      36,
+      46
+    ],
+    "source_ip:203.0.113.44": [
+      56,
+      60
+    ]
+  },
+  "interpretation": "Heuristic indicators only. A flagged event is not proof of compromise, malware, command-and-control, or data exfiltration. Validate with source systems and an analyst. No machine-learning model is used by this script."
+}

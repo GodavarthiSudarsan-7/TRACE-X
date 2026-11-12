@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRACE-X | Evidence Investigation</title>
+<style>
+:root{--bg:#080d18;--panel:#101a2b;--panel2:#142137;--line:#263650;--text:#e8eef8;--muted:#91a2ba;--cyan:#4dd7e5;--green:#42d39b;--amber:#ffbf69;--red:#ff7185}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#142c45 0,#080d18 38%);color:var(--text);font:14px/1.5 Inter,Segoe UI,Arial,sans-serif}
+header{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;background:#09111edc;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:13px}.logo{width:38px;height:38px;border:1px solid var(--cyan);border-radius:11px;display:grid;place-items:center;color:var(--cyan);font-weight:800;font-size:18px}.brand b{letter-spacing:2px;font-size:18px}.brand small{display:block;color:var(--muted);letter-spacing:1.5px;font-size:9px}
+.badge{border:1px solid #286b65;color:var(--green);background:#0b2b2a;padding:7px 12px;border-radius:30px;font-size:11px}
+main{max-width:1440px;margin:auto;padding:28px 34px}.eyebrow{color:var(--cyan);letter-spacing:2px;text-transform:uppercase;font-size:10px;font-weight:700}.hero{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.hero h1{font-size:30px;margin:5px 0}.hero p{margin:0;color:var(--muted)}.selectbox{display:flex;gap:9px;align-items:center;color:var(--muted)}
+select,button{background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:10px 13px;border-radius:8px;font:inherit}button{cursor:pointer;background:#12384a;border-color:#226578;color:#baf7ff;font-weight:650}button:hover{filter:brightness(1.2)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}.card{background:linear-gradient(145deg,#142239,#0e1727);border:1px solid var(--line);border-radius:13px;padding:17px;box-shadow:0 12px 28px #0002}.stat-label{color:var(--muted);font-size:11px}.stat{font-size:25px;font-weight:750;margin-top:5px}.stat-sub{font-size:10px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:1.08fr .92fr;gap:15px}.panel{background:#0e1828eF;border:1px solid var(--line);border-radius:13px;padding:18px;min-width:0}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.panel h2{font-size:14px;margin:0;letter-spacing:.4px}.sub{color:var(--muted);font-size:11px}.record{padding:12px;border:1px solid #253650;border-radius:9px;margin-bottom:9px;background:#111f33}.record-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:5px}.record-id{color:var(--cyan);font-weight:700;font-size:11px}.tag{font-size:9px;padding:3px 7px;border-radius:20px;background:#26344a;color:#b6c4d8}.record p{margin:0;color:#c2cede;font-size:12px}.list{max-height:550px;overflow:auto;padding-right:4px}
+.graph-wrap{height:400px;background:radial-gradient(circle,#14253a,#0b1422 72%);border:1px solid #24344c;border-radius:10px;overflow:hidden;position:relative}.graph-wrap svg{width:100%;height:100%}.edge{stroke:#35506a;stroke-width:1.2;opacity:.65}.edge.hot{stroke:var(--green);stroke-width:2.5;opacity:.9}.node circle{fill:#12374a;stroke:var(--cyan);stroke-width:2}.node text{fill:#d9faff;font-size:10px;text-anchor:middle;dominant-baseline:middle}.legend{display:flex;gap:14px;color:var(--muted);font-size:10px;margin-top:10px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}
+.pairs{max-height:340px;overflow:auto}.pair{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #223149;padding:9px 2px;gap:8px}.pair small{color:var(--muted)}.score{font-variant-numeric:tabular-nums;font-weight:700}.score.high{color:var(--green)}.score.low{color:#9aabc0}
+.notice{margin-top:16px;border:1px solid #6e5731;background:#2a2115;color:#f2d7a9;padding:13px 15px;border-radius:10px;font-size:11px}.notice b{color:#ffcb7c}.footer{color:#71839c;font-size:10px;text-align:center;margin:20px}
+@media(max-width:950px){.layout{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}header{padding:0 16px}main{padding:22px 16px}.hero{align-items:start;gap:15px;flex-direction:column}}@media(max-width:520px){.grid{grid-template-columns:1fr 1fr}.stat{font-size:20px}}
+</style></head>
+<body>
+<header><div class="brand"><div class="logo">T</div><div><b>TRACE-X</b><small>MULTIMODAL EVIDENCE INVESTIGATION</small></div></div><div class="badge">● LOCAL RESEARCH DEMO</div></header>
+<main>
+<div class="hero"><div><div class="eyebrow">Investigation workspace / V1 benchmark</div><h1>Evidence Relationship Analysis</h1><p>Explore how the trained model scores possible links between evidence records.</p></div><div class="selectbox">Test incident <select id="incident"></select><button id="run">Analyze incident ↗</button></div></div>
+<section class="grid">
+<div class="card"><div class="stat-label">EVIDENCE RECORDS</div><div class="stat" id="records">—</div><div class="stat-sub">Selected synthetic incident</div></div>
+<div class="card"><div class="stat-label">PAIR COMPARISONS</div><div class="stat" id="pairs">—</div><div class="stat-sub">All unordered record pairs</div></div>
+<div class="card"><div class="stat-label">LINK CANDIDATES</div><div class="stat" id="links">—</div><div class="stat-sub">Score ≥ validation threshold</div></div>
+<div class="card"><div class="stat-label">DECISION THRESHOLD</div><div class="stat" id="threshold">—</div><div class="stat-sub">Selected using validation data</div></div>
+</section>
+<div class="layout">
+<section class="panel"><div class="panel-head"><div><h2>Evidence records</h2><div class="sub">Text descriptions from held-out test incident</div></div><span class="tag">SYNTHETIC</span></div><div class="list" id="recordsList"></div></section>
+<section class="panel"><div class="panel-head"><div><h2>Relationship graph</h2><div class="sub">Green edges = model score meets threshold</div></div><span class="tag">PAIRWISE MODEL</span></div><div class="graph-wrap"><svg id="graph" viewBox="0 0 600 400" aria-label="Evidence relationship graph"></svg></div><div class="legend"><span><i class="dot" style="background:#4dd7e5"></i>Evidence node</span><span><i class="dot" style="background:#42d39b"></i>Candidate link</span><span><i class="dot" style="background:#35506a"></i>Below threshold</span></div></section>
+</div>
+<section class="panel" style="margin-top:15px"><div class="panel-head"><div><h2>Highest-scoring relationships</h2><div class="sub">Scores are model outputs, not proof of a relationship</div></div><span class="tag">SORTED BY SCORE</span></div><div class="pairs" id="pairsList"></div></section>
+<div class="notice"><b>Research limitation:</b> This prototype predicts whether two records resemble the same synthetic event according to its training labels. The V1 activity stream contains an event-order shortcut, and the modality audit showed activity-only performance was perfect. Therefore, the displayed scores must not be interpreted as validated real-world forensic accuracy, authenticity verification, causation, or proof. Human review is required.</div>
+<div class="footer">TRACE-X · Existing V1 checkpoint · No training occurs in this dashboard · Localhost only</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);let current=null;
+async function init(){const s=await fetch('/api/status').then(r=>r.json());if(!s.model_loaded){alert('Model could not load: '+s.runtime_error);return}
+$('threshold').textContent=Number(s.threshold).toFixed(4);
+const incidents=await fetch('/api/incidents').then(r=>r.json());$('incident').innerHTML=incidents.map(x=>`<option value="${x.id}">Incident ${x.id}</option>`).join('');
+$('run').onclick=analyze;await analyze();}
+function esc(x){return String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+async function analyze(){const id=$('incident').value;const d=await fetch('/api/incident/'+id).then(r=>r.json());if(d.error){alert(d.error);return}current=d;
+$('records').textContent=d.records.length;$('pairs').textContent=d.pairs_scored;$('links').textContent=d.candidate_links;$('threshold').textContent=d.threshold.toFixed(4);
+$('recordsList').innerHTML=d.records.map(r=>`<div class="record"><div class="record-top"><span class="record-id">${esc(r.id)}</span><span class="tag">${r.type}</span></div><p>${esc(r.text)}</p></div>`).join('');
+$('pairsList').innerHTML=d.edges.slice(0,18).map(e=>`<div class="pair"><div><b>${esc(e.source_id)}</b> <small>↔</small> <b>${esc(e.target_id)}</b><br><small>${e.related?'Candidate relationship':'Below threshold'}</small></div><span class="score ${e.related?'high':'low'}">${e.score.toFixed(4)}</span></div>`).join('');
+drawGraph(d);}
+function drawGraph(d){const svg=$('graph'),w=600,h=400,cx=300,cy=200,rx=220,ry=145;let pts=d.records.map((r,i)=>({x:cx+rx*Math.cos(-Math.PI/2+i*2*Math.PI/d.records.length),y:cy+ry*Math.sin(-Math.PI/2+i*2*Math.PI/d.records.length)}));let out='';
+for(const e of d.edges){const a=pts[e.source],b=pts[e.target];out+=`<line class="edge ${e.related?'hot':''}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" opacity="${e.related?'.95':'.22'}"/>`;}
+pts.forEach((p,i)=>{out+=`<g class="node"><circle cx="${p.x}" cy="${p.y}" r="17"/><text x="${p.x}" y="${p.y}">E${i+1}</text></g>`;});
+svg.innerHTML=out;}
+init().catch(e=>alert('Dashboard error: '+e));
+</script></body></html>

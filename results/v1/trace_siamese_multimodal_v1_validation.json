@@ -1,0 +1,28 @@
+{
+  "benchmark": "TRACE_Bench_v1",
+  "model": "SiameseTraceNet",
+  "validation": {
+    "threshold": 0.39311525225639343,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "roc_auc": 1.0,
+    "average_precision": 1.0,
+    "confusion_matrix_tn_fp_fn_tp": [
+      3750,
+      0,
+      0,
+      375
+    ],
+    "predicted_positive": 375,
+    "total_pairs": 4125,
+    "positive_pairs": 375,
+    "negative_pairs": 3750
+  },
+  "selection_metric": "validation average precision",
+  "timestamp_used_as_input": false,
+  "test_used_for_training_or_selection": false,
+  "original_models_modified": false,
+  "limitations": "Synthetic benchmark only. event_id is used only to form pair labels, not as model input. Scores do not establish real-world forensic validity."
+}

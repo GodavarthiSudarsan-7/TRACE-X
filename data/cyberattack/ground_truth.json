@@ -1,0 +1,26 @@
+{
+  "dataset_name": "TRACE-X Synthetic Cyber Incident V1",
+  "records": 150,
+  "incident_type": "Simulated account compromise with suspicious authentication and follow-on endpoint/network indicators",
+  "synthetic_only": true,
+  "documentation_ip_ranges_used": [
+    "198.51.100.0/24",
+    "203.0.113.0/24"
+  ],
+  "positive_label_definition": "is_suspicious=1 marks records intentionally placed in the simulated suspicious sequence; it is a benchmark label, not proof of maliciousness.",
+  "attack_stage_order": [
+    "initial_access_indicator",
+    "account_access_indicator",
+    "privilege_change_indicator",
+    "endpoint_indicator",
+    "command_and_control_indicator",
+    "possible_exfiltration_indicator",
+    "response_indicator"
+  ],
+  "caveats": [
+    "All events and entities are fictional.",
+    "IP addresses are reserved documentation ranges.",
+    "Labels apply only to this synthetic scenario.",
+    "Synthetic results must not be presented as real-world detection performance."
+  ]
+}

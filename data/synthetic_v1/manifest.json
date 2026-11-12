@@ -1,0 +1,43 @@
+{
+  "benchmark": "TRACE_Bench_v1",
+  "seed": 20261111,
+  "incidents_total": 500,
+  "events_per_incident": 5,
+  "evidence_per_event": 2,
+  "records_per_incident": 11,
+  "split_incidents": {
+    "train": 350,
+    "validation": 75,
+    "test": 75
+  },
+  "split_records": {
+    "train": {
+      "incidents": 350,
+      "records": 3850,
+      "forged_records": 419,
+      "distractors": 350
+    },
+    "validation": {
+      "incidents": 75,
+      "records": 825,
+      "forged_records": 92,
+      "distractors": 75
+    },
+    "test": {
+      "incidents": 75,
+      "records": 825,
+      "forged_records": 91,
+      "distractors": 75
+    }
+  },
+  "design": {
+    "same_event_text": "Shared event semantics across wording variants",
+    "same_event_image": "Shared event-level geometry with per-record noise",
+    "same_event_activity": "Shared event-level activity profile with per-record noise",
+    "timestamps": "Same-event jitter up to 20 minutes; event centers 5 minutes apart",
+    "forgery": "Controlled text, image, and activity modifications",
+    "distractors": "One unrelated evidence item per incident",
+    "split_policy": "Incident-disjoint train/validation/test"
+  },
+  "caveat": "Synthetic benchmark for method development only; not a real-world forensic dataset or evidence of forensic validity."
+}

@@ -1,0 +1,119 @@
+timestamp,event_type,severity,source,user,source_ip,host,message
+2026-11-10 14:01:22,file_access,INFO,EndpointMonitor,hr_user,192.0.2.78,SRV-APP-02,hr_user accessed an authorized project document.
+2026-11-10 14:02:07,login_success,INFO,EndpointMonitor,analyst2,192.0.2.91,WS-HR-04,Successful login for analyst2.
+2026-11-10 14:07:05,login_success,INFO,FileAudit,finance02,192.0.2.91,WS-HR-04,Successful login for finance02.
+2026-11-10 14:12:37,file_access,INFO,IdentityProvider,developer3,192.0.2.91,IDP-02,developer3 accessed an authorized project document.
+2026-11-10 14:14:15,process_start,INFO,IdentityProvider,ops_admin,192.0.2.21,WS-FIN-02,Approved application started on WS-FIN-02.
+2026-11-10 14:15:10,service_check,INFO,EndpointMonitor,developer3,192.0.2.78,WS-FIN-02,Routine health check completed on WS-FIN-02.
+2026-11-10 14:19:28,login_success,INFO,IdentityProvider,ops_admin,192.0.2.21,WS-FIN-02,Successful login for ops_admin.
+2026-11-10 14:20:26,service_check,INFO,EndpointMonitor,ops_admin,192.0.2.91,IDP-02,Routine health check completed on IDP-02.
+2026-11-10 14:21:18,login_success,INFO,IdentityProvider,ops_admin,192.0.2.56,IDP-02,Successful login for ops_admin.
+2026-11-10 14:23:40,login_success,INFO,EndpointMonitor,developer3,192.0.2.21,WS-DEV-03,Successful login for developer3.
+2026-11-10 14:26:22,file_access,INFO,IdentityProvider,ops_admin,192.0.2.91,SRV-APP-02,ops_admin accessed an authorized project document.
+2026-11-10 14:26:43,process_start,INFO,IdentityProvider,ops_admin,192.0.2.91,WS-FIN-02,Approved application started on WS-FIN-02.
+2026-11-10 14:27:24,file_access,INFO,EndpointMonitor,analyst2,192.0.2.34,SRV-APP-02,analyst2 accessed an authorized project document.
+2026-11-10 14:27:55,file_access,INFO,IdentityProvider,hr_user,192.0.2.91,IDP-02,hr_user accessed an authorized project document.
+2026-11-10 14:29:43,login_success,INFO,EndpointMonitor,ops_admin,192.0.2.56,WS-DEV-03,Successful login for ops_admin.
+2026-11-10 14:33:40,process_start,INFO,FileAudit,hr_user,192.0.2.78,WS-HR-04,Approved application started on WS-HR-04.
+2026-11-10 14:39:13,process_start,INFO,IdentityProvider,hr_user,192.0.2.21,WS-FIN-02,Approved application started on WS-FIN-02.
+2026-11-10 14:39:40,login_success,INFO,EndpointMonitor,finance02,192.0.2.91,SRV-APP-02,Successful login for finance02.
+2026-11-10 14:40:28,login_success,INFO,FileAudit,ops_admin,192.0.2.91,WS-DEV-03,Successful login for ops_admin.
+2026-11-10 14:41:51,file_access,INFO,FileAudit,finance02,192.0.2.21,SRV-APP-02,finance02 accessed an authorized project document.
+2026-11-10 14:44:39,login_success,INFO,EndpointMonitor,ops_admin,192.0.2.78,WS-DEV-03,Successful login for ops_admin.
+2026-11-10 14:48:16,file_access,INFO,EndpointMonitor,analyst2,192.0.2.21,SRV-APP-02,analyst2 accessed an authorized project document.
+2026-11-10 14:50:45,process_start,INFO,FileAudit,ops_admin,192.0.2.34,SRV-APP-02,Approved application started on SRV-APP-02.
+2026-11-10 14:52:42,process_start,INFO,IdentityProvider,hr_user,192.0.2.56,WS-HR-04,Approved application started on WS-HR-04.
+2026-11-10 14:54:58,process_start,INFO,EndpointMonitor,ops_admin,192.0.2.34,WS-DEV-03,Approved application started on WS-DEV-03.
+2026-11-10 14:55:03,service_check,INFO,IdentityProvider,ops_admin,192.0.2.21,IDP-02,Routine health check completed on IDP-02.
+2026-11-10 14:56:00,login_success,INFO,IdentityProvider,analyst2,192.0.2.34,WS-FIN-02,Successful login for analyst2.
+2026-11-10 14:56:08,login_success,INFO,IdentityProvider,ops_admin,192.0.2.21,SRV-APP-02,Successful login for ops_admin.
+2026-11-10 14:58:52,service_check,INFO,IdentityProvider,analyst2,192.0.2.78,WS-DEV-03,Routine health check completed on WS-DEV-03.
+2026-11-10 15:00:10,file_access,INFO,EndpointMonitor,developer3,192.0.2.78,SRV-APP-02,developer3 accessed an authorized project document.
+2026-11-10 15:00:25,login_success,INFO,FileAudit,analyst2,192.0.2.34,IDP-02,Successful login for analyst2.
+2026-11-10 15:01:17,file_access,INFO,EndpointMonitor,developer3,192.0.2.56,WS-FIN-02,developer3 accessed an authorized project document.
+2026-11-10 15:02:30,process_start,INFO,FileAudit,ops_admin,192.0.2.78,WS-FIN-02,Approved application started on WS-FIN-02.
+2026-11-10 15:03:14,file_access,INFO,FileAudit,analyst2,192.0.2.21,WS-DEV-03,analyst2 accessed an authorized project document.
+2026-11-10 15:05:00,login_failed,WARNING,IdentityProvider,contractor7,198.51.100.146,IDP-02,Failed login attempt for contractor7.
+2026-11-10 15:05:09,login_failed,WARNING,IdentityProvider,contractor7,198.51.100.146,IDP-02,Second failed login attempt for contractor7.
+2026-11-10 15:05:18,login_failed,WARNING,IdentityProvider,contractor7,198.51.100.146,IDP-02,Third failed login attempt for contractor7.
+2026-11-10 15:06:00,login_success,WARNING,IdentityProvider,contractor7,198.51.100.146,IDP-02,Successful login following repeated failures from an unfamiliar source.
+2026-11-10 15:07:02,service_check,INFO,FileAudit,analyst2,192.0.2.78,IDP-02,Routine health check completed on IDP-02.
+2026-11-10 15:07:08,service_check,INFO,EndpointMonitor,hr_user,192.0.2.34,WS-FIN-02,Routine health check completed on WS-FIN-02.
+2026-11-10 15:07:10,privilege_change,WARNING,DirectoryAudit,contractor7,-,SRV-APP-02,Privilege assignment changed: contractor7 granted elevated application role.
+2026-11-10 15:08:05,process_start,WARNING,EndpointMonitor,contractor7,-,SRV-APP-02,Unsigned executable launched from a temporary directory.
+2026-11-10 15:09:12,connection_anomaly,ALERT,Firewall,-,203.0.113.88,FW-EDGE-02,Unusual outbound connection to an unapproved external endpoint.
+2026-11-10 15:10:03,transfer_anomaly,ALERT,NetworkMonitor,contractor7,203.0.113.88,NET-MON-02,Unusual data transfer volume observed for contractor7.
+2026-11-10 15:11:29,service_check,INFO,IdentityProvider,hr_user,192.0.2.56,WS-HR-04,Routine health check completed on WS-HR-04.
+2026-11-10 15:11:51,service_check,INFO,EndpointMonitor,analyst2,192.0.2.78,WS-HR-04,Routine health check completed on WS-HR-04.
+2026-11-10 15:13:13,service_check,INFO,EndpointMonitor,developer3,192.0.2.91,IDP-02,Routine health check completed on IDP-02.
+2026-11-10 15:13:27,file_access,INFO,EndpointMonitor,ops_admin,192.0.2.34,SRV-APP-02,ops_admin accessed an authorized project document.
+2026-11-10 15:15:35,process_start,INFO,FileAudit,finance02,192.0.2.78,WS-HR-04,Approved application started on WS-HR-04.
+2026-11-10 15:16:32,process_start,INFO,FileAudit,hr_user,192.0.2.56,SRV-APP-02,Approved application started on SRV-APP-02.
+2026-11-10 15:19:25,process_start,INFO,IdentityProvider,hr_user,192.0.2.91,SRV-APP-02,Approved application started on SRV-APP-02.
+2026-11-10 15:20:27,process_start,INFO,FileAudit,ops_admin,192.0.2.21,IDP-02,Approved application started on IDP-02.
+2026-11-10 15:22:31,service_check,INFO,IdentityProvider,analyst2,192.0.2.56,WS-FIN-02,Routine health check completed on WS-FIN-02.
+2026-11-10 15:24:04,process_start,INFO,IdentityProvider,ops_admin,192.0.2.56,WS-HR-04,Approved application started on WS-HR-04.
+2026-11-10 15:24:17,process_start,INFO,FileAudit,analyst2,192.0.2.56,WS-DEV-03,Approved application started on WS-DEV-03.
+2026-11-10 15:24:34,file_access,INFO,EndpointMonitor,developer3,192.0.2.21,SRV-APP-02,developer3 accessed an authorized project document.
+2026-11-10 15:25:20,file_access,INFO,IdentityProvider,ops_admin,192.0.2.34,WS-FIN-02,ops_admin accessed an authorized project document.
+2026-11-10 15:25:50,file_access,INFO,FileAudit,developer3,192.0.2.56,WS-HR-04,developer3 accessed an authorized project document.
+2026-11-10 15:26:51,file_access,INFO,FileAudit,analyst2,192.0.2.34,WS-HR-04,analyst2 accessed an authorized project document.
+2026-11-10 15:27:13,service_check,INFO,IdentityProvider,hr_user,192.0.2.78,IDP-02,Routine health check completed on IDP-02.
+2026-11-10 15:29:19,file_access,INFO,EndpointMonitor,finance02,192.0.2.21,WS-HR-04,finance02 accessed an authorized project document.
+2026-11-10 15:31:54,login_success,INFO,FileAudit,hr_user,192.0.2.56,IDP-02,Successful login for hr_user.
+2026-11-10 15:33:57,file_access,INFO,FileAudit,analyst2,192.0.2.34,WS-DEV-03,analyst2 accessed an authorized project document.
+2026-11-10 15:35:48,login_success,INFO,FileAudit,finance02,192.0.2.91,IDP-02,Successful login for finance02.
+2026-11-10 15:37:38,login_success,INFO,FileAudit,developer3,192.0.2.56,IDP-02,Successful login for developer3.
+2026-11-10 15:38:44,process_start,INFO,EndpointMonitor,finance02,192.0.2.21,WS-HR-04,Approved application started on WS-HR-04.
+2026-11-10 15:39:57,process_start,INFO,EndpointMonitor,ops_admin,192.0.2.91,WS-FIN-02,Approved application started on WS-FIN-02.
+2026-11-10 15:44:12,service_check,INFO,EndpointMonitor,analyst2,192.0.2.78,WS-FIN-02,Routine health check completed on WS-FIN-02.
+2026-11-10 15:45:29,process_start,INFO,FileAudit,analyst2,192.0.2.21,WS-FIN-02,Approved application started on WS-FIN-02.
+2026-11-10 15:50:04,login_success,INFO,FileAudit,hr_user,192.0.2.56,IDP-02,Successful login for hr_user.
+2026-11-10 15:51:10,file_access,INFO,FileAudit,developer3,192.0.2.56,WS-FIN-02,developer3 accessed an authorized project document.
+2026-11-10 15:53:28,file_access,INFO,FileAudit,finance02,192.0.2.78,IDP-02,finance02 accessed an authorized project document.
+2026-11-10 15:54:08,process_start,INFO,IdentityProvider,developer3,192.0.2.56,WS-HR-04,Approved application started on WS-HR-04.
+2026-11-10 15:56:08,service_check,INFO,EndpointMonitor,developer3,192.0.2.91,IDP-02,Routine health check completed on IDP-02.
+2026-11-10 15:57:34,service_check,INFO,FileAudit,analyst2,192.0.2.21,SRV-APP-02,Routine health check completed on SRV-APP-02.
+2026-11-10 15:57:39,file_access,INFO,FileAudit,ops_admin,192.0.2.21,WS-FIN-02,ops_admin accessed an authorized project document.
+2026-11-10 15:58:24,service_check,INFO,IdentityProvider,hr_user,192.0.2.34,IDP-02,Routine health check completed on IDP-02.
+2026-11-10 16:01:28,process_start,INFO,FileAudit,hr_user,192.0.2.56,WS-HR-04,Approved application started on WS-HR-04.
+2026-11-10 16:10:05,login_success,INFO,FileAudit,finance02,192.0.2.91,WS-FIN-02,Successful login for finance02.
+2026-11-10 16:15:55,file_access,INFO,FileAudit,ops_admin,192.0.2.34,SRV-APP-02,ops_admin accessed an authorized project document.
+2026-11-10 16:16:49,file_access,INFO,EndpointMonitor,finance02,192.0.2.78,WS-HR-04,finance02 accessed an authorized project document.
+2026-11-10 16:17:21,file_access,INFO,FileAudit,analyst2,192.0.2.56,WS-FIN-02,analyst2 accessed an authorized project document.
+2026-11-10 16:18:08,file_access,INFO,EndpointMonitor,ops_admin,192.0.2.78,IDP-02,ops_admin accessed an authorized project document.
+2026-11-10 16:21:09,file_access,INFO,FileAudit,hr_user,192.0.2.91,WS-DEV-03,hr_user accessed an authorized project document.
+2026-11-10 16:21:19,login_success,INFO,IdentityProvider,analyst2,192.0.2.56,WS-HR-04,Successful login for analyst2.
+2026-11-10 16:23:34,process_start,INFO,EndpointMonitor,hr_user,192.0.2.78,IDP-02,Approved application started on IDP-02.
+2026-11-10 16:27:12,file_access,INFO,IdentityProvider,developer3,192.0.2.78,SRV-APP-02,developer3 accessed an authorized project document.
+2026-11-10 16:29:35,login_success,INFO,EndpointMonitor,finance02,192.0.2.34,SRV-APP-02,Successful login for finance02.
+2026-11-10 16:36:52,process_start,INFO,IdentityProvider,ops_admin,192.0.2.91,SRV-APP-02,Approved application started on SRV-APP-02.
+2026-11-10 16:38:56,login_success,INFO,IdentityProvider,hr_user,192.0.2.34,IDP-02,Successful login for hr_user.
+2026-11-10 16:43:07,file_access,INFO,IdentityProvider,analyst2,192.0.2.34,WS-DEV-03,analyst2 accessed an authorized project document.
+2026-11-10 16:44:29,file_access,INFO,FileAudit,finance02,192.0.2.34,WS-DEV-03,finance02 accessed an authorized project document.
+2026-11-10 16:47:44,file_access,INFO,IdentityProvider,analyst2,192.0.2.78,WS-FIN-02,analyst2 accessed an authorized project document.
+2026-11-10 16:49:14,login_success,INFO,EndpointMonitor,hr_user,192.0.2.34,WS-FIN-02,Successful login for hr_user.
+2026-11-10 16:51:17,file_access,INFO,IdentityProvider,analyst2,192.0.2.34,IDP-02,analyst2 accessed an authorized project document.
+2026-11-10 16:51:41,login_success,INFO,IdentityProvider,hr_user,192.0.2.56,SRV-APP-02,Successful login for hr_user.
+2026-11-10 16:52:19,login_success,INFO,IdentityProvider,finance02,192.0.2.34,WS-HR-04,Successful login for finance02.
+2026-11-10 16:58:33,file_access,INFO,IdentityProvider,developer3,192.0.2.91,WS-FIN-02,developer3 accessed an authorized project document.
+2026-11-10 18:41:14,login_success,INFO,IdentityProvider,hr_user,192.0.2.78,SRV-APP-02,Routine successful login for hr_user.
+2026-11-10 18:42:01,login_success,INFO,IdentityProvider,developer3,192.0.2.78,WS-DEV-03,Routine successful login for developer3.
+2026-11-10 18:43:46,login_success,INFO,IdentityProvider,finance02,192.0.2.34,SRV-APP-02,Routine successful login for finance02.
+2026-11-10 18:44:39,login_success,INFO,IdentityProvider,ops_admin,192.0.2.78,WS-FIN-02,Routine successful login for ops_admin.
+2026-11-10 18:45:37,login_success,INFO,IdentityProvider,ops_admin,192.0.2.21,WS-FIN-02,Routine successful login for ops_admin.
+2026-11-10 18:46:41,login_success,INFO,IdentityProvider,developer3,192.0.2.78,WS-HR-04,Routine successful login for developer3.
+2026-11-10 18:47:11,login_success,INFO,IdentityProvider,analyst2,192.0.2.78,WS-DEV-03,Routine successful login for analyst2.
+2026-11-10 18:48:20,login_success,INFO,IdentityProvider,finance02,192.0.2.56,SRV-APP-02,Routine successful login for finance02.
+2026-11-10 18:49:21,login_success,INFO,IdentityProvider,developer3,192.0.2.78,WS-DEV-03,Routine successful login for developer3.
+2026-11-10 18:50:16,login_success,INFO,IdentityProvider,analyst2,192.0.2.21,SRV-APP-02,Routine successful login for analyst2.
+2026-11-10 18:51:47,login_success,INFO,IdentityProvider,ops_admin,192.0.2.56,WS-FIN-02,Routine successful login for ops_admin.
+2026-11-10 18:52:14,login_success,INFO,IdentityProvider,analyst2,192.0.2.21,WS-FIN-02,Routine successful login for analyst2.
+2026-11-10 18:53:15,login_success,INFO,IdentityProvider,finance02,192.0.2.91,WS-FIN-02,Routine successful login for finance02.
+2026-11-10 18:54:09,login_success,INFO,IdentityProvider,finance02,192.0.2.78,WS-HR-04,Routine successful login for finance02.
+2026-11-10 18:55:42,login_success,INFO,IdentityProvider,analyst2,192.0.2.34,IDP-02,Routine successful login for analyst2.
+2026-11-10 18:56:29,login_success,INFO,IdentityProvider,hr_user,192.0.2.34,WS-DEV-03,Routine successful login for hr_user.
+2026-11-10 18:57:38,login_success,INFO,IdentityProvider,ops_admin,192.0.2.34,WS-FIN-02,Routine successful login for ops_admin.
+2026-11-10 18:58:19,login_success,INFO,IdentityProvider,analyst2,192.0.2.21,IDP-02,Routine successful login for analyst2.
+2026-11-10 18:59:59,login_success,INFO,IdentityProvider,hr_user,192.0.2.78,IDP-02,Routine successful login for hr_user.
+2026-11-10 19:00:25,login_success,INFO,IdentityProvider,finance02,192.0.2.91,WS-FIN-02,Routine successful login for finance02.

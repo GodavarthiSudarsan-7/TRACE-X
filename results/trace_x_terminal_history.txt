@@ -1,0 +1,47 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261111235337
+Username: GODXSUDARSAN\sudu6
+RunAs User: GODXSUDARSAN\sudu6
+Configuration Name: 
+Machine: GODXSUDARSAN (Microsoft Windows NT 10.0.26300.0)
+Host Application: powershell.exe -NoExit -ExecutionPolicy Bypass -File .\START_TRACE_X.ps1
+Process ID: 12660
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Projects\TRACE_X\TRACE-X\results\trace_x_terminal_history.txt
+Project: C:\Projects\TRACE_X\TRACE-X
+Starting TRACE-X...
+
+**********************
+Windows PowerShell transcript start
+Start time: 20261111235358
+Username: GODXSUDARSAN\sudu6
+RunAs User: GODXSUDARSAN\sudu6
+Configuration Name: 
+Machine: GODXSUDARSAN (Microsoft Windows NT 10.0.26300.0)
+Host Application: powershell.exe -NoExit -ExecutionPolicy Bypass -File .\START_TRACE_X.ps1
+Process ID: 15432
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Projects\TRACE_X\TRACE-X\results\trace_x_terminal_history.txt
+Project: C:\Projects\TRACE_X\TRACE-X
+Starting TRACE-X...
+
+
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."

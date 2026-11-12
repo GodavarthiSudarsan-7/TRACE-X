@@ -1,0 +1,149 @@
+timestamp,event_type,severity,source,user,source_ip,host,message
+2026-11-09 18:00:02,login_success,INFO,FileAudit,employee8,192.0.2.41,SRV-FILE-02,Routine authenticated session for employee8.
+2026-11-09 18:00:32,document_view,INFO,IdentityProvider,hr_staff2,192.0.2.74,WS-OPS-03,hr_staff2 viewed a document permitted by the assigned role.
+2026-11-09 18:01:23,service_check,INFO,DocumentManagement,it_support,192.0.2.52,WS-HR-02,Routine file service health check completed on WS-HR-02.
+2026-11-09 18:04:53,login_success,INFO,FileAudit,employee4,192.0.2.63,WS-FIN-05,Routine authenticated session for employee4.
+2026-11-09 18:11:27,document_view,INFO,DocumentManagement,employee4,192.0.2.63,SRV-DOC-01,employee4 viewed a document permitted by the assigned role.
+2026-11-09 18:11:52,service_check,INFO,IdentityProvider,hr_staff2,192.0.2.63,WS-OPS-03,Routine file service health check completed on WS-OPS-03.
+2026-11-09 18:12:20,login_success,INFO,DocumentManagement,hr_staff2,192.0.2.41,SRV-DOC-01,Routine authenticated session for hr_staff2.
+2026-11-09 18:16:32,service_check,INFO,FileAudit,hr_staff2,192.0.2.63,SRV-FILE-02,Routine file service health check completed on SRV-FILE-02.
+2026-11-09 18:16:57,login_success,INFO,DocumentManagement,employee8,192.0.2.74,SRV-DOC-01,Routine authenticated session for employee8.
+2026-11-09 18:19:54,document_view,INFO,DocumentManagement,it_support,192.0.2.74,SRV-DOC-01,it_support viewed a document permitted by the assigned role.
+2026-11-09 18:21:25,login_success,INFO,DocumentManagement,it_support,192.0.2.41,WS-OPS-03,Routine authenticated session for it_support.
+2026-11-09 18:22:50,login_success,INFO,IdentityProvider,analyst3,192.0.2.85,WS-FIN-05,Routine authenticated session for analyst3.
+2026-11-09 18:23:06,file_access,INFO,IdentityProvider,analyst3,192.0.2.41,SRV-FILE-02,analyst3 accessed an authorized departmental document.
+2026-11-09 18:23:41,document_view,INFO,IdentityProvider,analyst3,192.0.2.85,SRV-DOC-01,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 18:26:16,file_access,INFO,DocumentManagement,hr_staff2,192.0.2.63,WS-OPS-03,hr_staff2 accessed an authorized departmental document.
+2026-11-09 18:30:42,file_access,INFO,FileAudit,employee4,192.0.2.74,WS-OPS-03,employee4 accessed an authorized departmental document.
+2026-11-09 18:40:28,file_access,INFO,FileAudit,it_support,192.0.2.41,WS-OPS-03,it_support accessed an authorized departmental document.
+2026-11-09 18:48:06,login_success,INFO,DocumentManagement,analyst3,192.0.2.74,SRV-FILE-02,Routine authenticated session for analyst3.
+2026-11-09 18:53:26,service_check,INFO,IdentityProvider,employee8,192.0.2.85,WS-HR-02,Routine file service health check completed on WS-HR-02.
+2026-11-09 18:55:31,document_view,INFO,DocumentManagement,employee8,192.0.2.41,SRV-DOC-01,employee8 viewed a document permitted by the assigned role.
+2026-11-09 18:56:01,service_check,INFO,FileAudit,analyst3,192.0.2.41,SRV-DOC-01,Routine file service health check completed on SRV-DOC-01.
+2026-11-09 18:57:09,document_view,INFO,IdentityProvider,hr_staff2,192.0.2.52,WS-FIN-05,hr_staff2 viewed a document permitted by the assigned role.
+2026-11-09 18:58:44,service_check,INFO,FileAudit,analyst3,192.0.2.63,WS-OPS-03,Routine file service health check completed on WS-OPS-03.
+2026-11-09 19:00:34,login_success,INFO,IdentityProvider,employee8,192.0.2.41,SRV-FILE-02,Routine authenticated session for employee8.
+2026-11-09 19:01:30,file_access,INFO,IdentityProvider,it_support,192.0.2.41,WS-OPS-03,it_support accessed an authorized departmental document.
+2026-11-09 19:03:21,file_access,INFO,FileAudit,hr_staff2,192.0.2.52,SRV-DOC-01,hr_staff2 accessed an authorized departmental document.
+2026-11-09 19:05:47,document_view,INFO,DocumentManagement,employee4,192.0.2.63,WS-HR-02,employee4 viewed a document permitted by the assigned role.
+2026-11-09 19:12:01,service_check,INFO,FileAudit,employee4,192.0.2.63,WS-OPS-03,Routine file service health check completed on WS-OPS-03.
+2026-11-09 19:12:25,service_check,INFO,DocumentManagement,analyst3,192.0.2.41,SRV-FILE-02,Routine file service health check completed on SRV-FILE-02.
+2026-11-09 19:12:28,file_access,INFO,FileAudit,hr_staff2,192.0.2.85,SRV-DOC-01,hr_staff2 accessed an authorized departmental document.
+2026-11-09 19:14:30,service_check,INFO,FileAudit,employee4,192.0.2.63,WS-FIN-05,Routine file service health check completed on WS-FIN-05.
+2026-11-09 19:15:32,service_check,INFO,FileAudit,hr_staff2,192.0.2.63,WS-OPS-03,Routine file service health check completed on WS-OPS-03.
+2026-11-09 19:16:16,service_check,INFO,FileAudit,it_support,192.0.2.52,WS-OPS-03,Routine file service health check completed on WS-OPS-03.
+2026-11-09 19:24:15,file_access,INFO,FileAudit,analyst3,192.0.2.41,SRV-FILE-02,analyst3 accessed an authorized departmental document.
+2026-11-09 19:27:42,service_check,INFO,IdentityProvider,employee8,192.0.2.63,WS-FIN-05,Routine file service health check completed on WS-FIN-05.
+2026-11-09 19:29:15,file_access,INFO,IdentityProvider,it_support,192.0.2.85,WS-OPS-03,it_support accessed an authorized departmental document.
+2026-11-09 19:36:07,service_check,INFO,FileAudit,hr_staff2,192.0.2.85,WS-OPS-03,Routine file service health check completed on WS-OPS-03.
+2026-11-09 19:40:47,file_access,INFO,IdentityProvider,it_support,192.0.2.41,WS-HR-02,it_support accessed an authorized departmental document.
+2026-11-09 19:46:17,file_access,INFO,DocumentManagement,employee4,192.0.2.74,SRV-FILE-02,employee4 accessed an authorized departmental document.
+2026-11-09 19:49:51,document_view,INFO,IdentityProvider,analyst3,192.0.2.85,SRV-DOC-01,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 19:50:03,login_success,INFO,FileAudit,analyst3,192.0.2.52,WS-FIN-05,Routine authenticated session for analyst3.
+2026-11-09 19:50:16,service_check,INFO,IdentityProvider,employee8,192.0.2.41,SRV-FILE-02,Routine file service health check completed on SRV-FILE-02.
+2026-11-09 19:51:20,login_success,INFO,DocumentManagement,employee4,192.0.2.41,WS-FIN-05,Routine authenticated session for employee4.
+2026-11-09 19:51:23,document_view,INFO,IdentityProvider,it_support,192.0.2.85,WS-OPS-03,it_support viewed a document permitted by the assigned role.
+2026-11-09 19:53:11,login_success,INFO,IdentityProvider,hr_staff2,192.0.2.63,WS-FIN-05,Routine authenticated session for hr_staff2.
+2026-11-09 19:57:50,service_check,INFO,FileAudit,analyst3,192.0.2.85,WS-HR-02,Routine file service health check completed on WS-HR-02.
+2026-11-09 20:00:11,document_view,INFO,FileAudit,employee8,192.0.2.74,SRV-DOC-01,employee8 viewed a document permitted by the assigned role.
+2026-11-09 20:02:52,login_success,INFO,IdentityProvider,hr_staff2,192.0.2.74,WS-FIN-05,Routine authenticated session for hr_staff2.
+2026-11-09 20:05:00,file_access,INFO,FileAudit,employee4,192.0.2.41,SRV-FILE-02,employee4 accessed the confidential Finance archive outside the usual work window.
+2026-11-09 20:08:00,file_access,INFO,FileAudit,employee4,192.0.2.41,SRV-FILE-02,employee4 accessed confidential HR personnel records outside the usual work window.
+2026-11-09 20:11:00,file_access,INFO,FileAudit,employee4,192.0.2.41,SRV-FILE-02,employee4 accessed restricted Legal case documents.
+2026-11-09 20:12:56,service_check,INFO,DocumentManagement,employee4,192.0.2.52,WS-FIN-05,Routine file service health check completed on WS-FIN-05.
+2026-11-09 20:14:00,privilege_change,WARNING,DirectoryAudit,employee4,-,SRV-DOC-01,Access role for employee4 changed to include expanded document permissions.
+2026-11-09 20:15:36,service_check,INFO,DocumentManagement,it_support,192.0.2.41,WS-FIN-05,Routine file service health check completed on WS-FIN-05.
+2026-11-09 20:17:00,file_access,INFO,FileAudit,employee4,192.0.2.41,SRV-FILE-02,Large batch of confidential departmental files accessed by employee4.
+2026-11-09 20:18:59,file_access,INFO,DocumentManagement,analyst3,192.0.2.52,WS-HR-02,analyst3 accessed an authorized departmental document.
+2026-11-09 20:20:00,connection_anomaly,ALERT,Firewall,-,203.0.113.121,FW-EDGE-03,Unusual outbound connection observed during confidential file access activity.
+2026-11-09 20:23:00,transfer_anomaly,ALERT,NetworkMonitor,employee4,203.0.113.121,NET-MON-03,Unusually large outbound transfer associated with employee4 session.
+2026-11-09 20:23:07,file_access,INFO,FileAudit,it_support,192.0.2.85,SRV-DOC-01,it_support accessed an authorized departmental document.
+2026-11-09 20:26:00,transfer_anomaly,ALERT,DLPMonitor,employee4,203.0.113.121,DLP-03,Data loss prevention alert: bulk transfer pattern involving restricted documents.
+2026-11-09 20:28:12,service_check,INFO,DocumentManagement,employee8,192.0.2.41,SRV-DOC-01,Routine file service health check completed on SRV-DOC-01.
+2026-11-09 20:30:11,service_check,INFO,FileAudit,it_support,192.0.2.74,SRV-DOC-01,Routine file service health check completed on SRV-DOC-01.
+2026-11-09 20:31:08,service_check,INFO,FileAudit,employee4,192.0.2.52,WS-FIN-05,Routine file service health check completed on WS-FIN-05.
+2026-11-09 20:32:37,file_access,INFO,FileAudit,employee4,192.0.2.74,SRV-DOC-01,employee4 accessed an authorized departmental document.
+2026-11-09 20:33:01,service_check,INFO,FileAudit,employee4,192.0.2.41,WS-HR-02,Routine file service health check completed on WS-HR-02.
+2026-11-09 20:33:49,service_check,INFO,FileAudit,hr_staff2,192.0.2.52,WS-OPS-03,Routine file service health check completed on WS-OPS-03.
+2026-11-09 20:35:12,service_check,INFO,FileAudit,employee4,192.0.2.41,SRV-DOC-01,Routine file service health check completed on SRV-DOC-01.
+2026-11-09 20:36:17,file_access,INFO,FileAudit,hr_staff2,192.0.2.74,SRV-DOC-01,hr_staff2 accessed an authorized departmental document.
+2026-11-09 20:37:13,document_view,INFO,FileAudit,hr_staff2,192.0.2.85,SRV-FILE-02,hr_staff2 viewed a document permitted by the assigned role.
+2026-11-09 20:41:04,file_access,INFO,DocumentManagement,employee4,192.0.2.85,WS-OPS-03,employee4 accessed an authorized departmental document.
+2026-11-09 20:43:54,service_check,INFO,FileAudit,it_support,192.0.2.74,SRV-DOC-01,Routine file service health check completed on SRV-DOC-01.
+2026-11-09 20:47:39,login_success,INFO,DocumentManagement,analyst3,192.0.2.63,SRV-FILE-02,Routine authenticated session for analyst3.
+2026-11-09 20:48:10,document_view,INFO,DocumentManagement,analyst3,192.0.2.41,WS-OPS-03,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 20:54:19,document_view,INFO,DocumentManagement,analyst3,192.0.2.74,WS-HR-02,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 20:58:56,login_success,INFO,IdentityProvider,analyst3,192.0.2.52,WS-FIN-05,Routine authenticated session for analyst3.
+2026-11-09 21:04:38,file_access,INFO,IdentityProvider,employee4,192.0.2.74,SRV-FILE-02,employee4 accessed an authorized departmental document.
+2026-11-09 21:06:24,document_view,INFO,DocumentManagement,analyst3,192.0.2.41,SRV-FILE-02,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 21:07:07,file_access,INFO,IdentityProvider,hr_staff2,192.0.2.41,WS-HR-02,hr_staff2 accessed an authorized departmental document.
+2026-11-09 21:13:30,login_success,INFO,FileAudit,hr_staff2,192.0.2.63,WS-HR-02,Routine authenticated session for hr_staff2.
+2026-11-09 21:14:34,document_view,INFO,DocumentManagement,hr_staff2,192.0.2.52,SRV-FILE-02,hr_staff2 viewed a document permitted by the assigned role.
+2026-11-09 21:22:45,service_check,INFO,FileAudit,employee8,192.0.2.74,WS-FIN-05,Routine file service health check completed on WS-FIN-05.
+2026-11-09 21:31:14,document_view,INFO,IdentityProvider,analyst3,192.0.2.41,WS-OPS-03,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 21:31:16,login_success,INFO,DocumentManagement,hr_staff2,192.0.2.74,WS-HR-02,Routine authenticated session for hr_staff2.
+2026-11-09 21:31:16,file_access,INFO,IdentityProvider,employee4,192.0.2.63,WS-FIN-05,employee4 accessed an authorized departmental document.
+2026-11-09 21:33:27,login_success,INFO,DocumentManagement,employee8,192.0.2.85,WS-HR-02,Routine authenticated session for employee8.
+2026-11-09 21:36:30,login_success,INFO,IdentityProvider,employee4,192.0.2.63,SRV-FILE-02,Routine authenticated session for employee4.
+2026-11-09 21:39:35,document_view,INFO,FileAudit,employee8,192.0.2.63,SRV-DOC-01,employee8 viewed a document permitted by the assigned role.
+2026-11-09 21:40:05,file_access,INFO,DocumentManagement,employee4,192.0.2.52,WS-HR-02,employee4 accessed an authorized departmental document.
+2026-11-09 21:41:51,document_view,INFO,IdentityProvider,employee8,192.0.2.85,WS-FIN-05,employee8 viewed a document permitted by the assigned role.
+2026-11-09 21:42:34,document_view,INFO,IdentityProvider,hr_staff2,192.0.2.63,SRV-FILE-02,hr_staff2 viewed a document permitted by the assigned role.
+2026-11-09 21:43:12,service_check,INFO,IdentityProvider,employee4,192.0.2.85,WS-HR-02,Routine file service health check completed on WS-HR-02.
+2026-11-09 21:44:31,file_access,INFO,DocumentManagement,it_support,192.0.2.74,SRV-DOC-01,it_support accessed an authorized departmental document.
+2026-11-09 21:45:32,file_access,INFO,IdentityProvider,employee8,192.0.2.63,WS-FIN-05,employee8 accessed an authorized departmental document.
+2026-11-09 21:49:53,file_access,INFO,IdentityProvider,it_support,192.0.2.74,SRV-DOC-01,it_support accessed an authorized departmental document.
+2026-11-09 21:53:22,service_check,INFO,FileAudit,hr_staff2,192.0.2.52,WS-FIN-05,Routine file service health check completed on WS-FIN-05.
+2026-11-09 21:53:42,document_view,INFO,FileAudit,it_support,192.0.2.85,WS-OPS-03,it_support viewed a document permitted by the assigned role.
+2026-11-09 21:56:27,file_access,INFO,IdentityProvider,it_support,192.0.2.41,SRV-DOC-01,it_support accessed an authorized departmental document.
+2026-11-09 22:01:24,document_view,INFO,DocumentManagement,employee8,192.0.2.63,SRV-DOC-01,employee8 viewed a document permitted by the assigned role.
+2026-11-09 22:10:05,document_view,INFO,FileAudit,employee8,192.0.2.41,WS-FIN-05,employee8 viewed a document permitted by the assigned role.
+2026-11-09 22:11:33,service_check,INFO,FileAudit,analyst3,192.0.2.52,SRV-DOC-01,Routine file service health check completed on SRV-DOC-01.
+2026-11-09 22:17:46,service_check,INFO,DocumentManagement,employee8,192.0.2.74,SRV-FILE-02,Routine file service health check completed on SRV-FILE-02.
+2026-11-09 22:24:11,file_access,INFO,DocumentManagement,employee8,192.0.2.85,WS-OPS-03,employee8 accessed an authorized departmental document.
+2026-11-09 22:27:48,service_check,INFO,IdentityProvider,it_support,192.0.2.63,SRV-FILE-02,Routine file service health check completed on SRV-FILE-02.
+2026-11-09 22:27:59,file_access,INFO,DocumentManagement,employee8,192.0.2.41,WS-HR-02,employee8 accessed an authorized departmental document.
+2026-11-09 22:37:44,document_view,INFO,IdentityProvider,analyst3,192.0.2.41,SRV-FILE-02,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 22:40:36,service_check,INFO,FileAudit,it_support,192.0.2.41,WS-FIN-05,Routine file service health check completed on WS-FIN-05.
+2026-11-09 22:45:16,file_access,INFO,IdentityProvider,analyst3,192.0.2.52,WS-OPS-03,analyst3 accessed an authorized departmental document.
+2026-11-09 22:45:27,file_access,INFO,IdentityProvider,hr_staff2,192.0.2.74,SRV-FILE-02,hr_staff2 accessed an authorized departmental document.
+2026-11-09 22:46:26,document_view,INFO,FileAudit,employee4,192.0.2.63,SRV-FILE-02,employee4 viewed a document permitted by the assigned role.
+2026-11-09 22:46:32,file_access,INFO,DocumentManagement,employee8,192.0.2.41,SRV-FILE-02,employee8 accessed an authorized departmental document.
+2026-11-09 22:53:16,document_view,INFO,IdentityProvider,it_support,192.0.2.63,SRV-FILE-02,it_support viewed a document permitted by the assigned role.
+2026-11-09 22:56:34,document_view,INFO,DocumentManagement,analyst3,192.0.2.41,SRV-FILE-02,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 23:04:50,login_success,INFO,DocumentManagement,analyst3,192.0.2.85,WS-OPS-03,Routine authenticated session for analyst3.
+2026-11-09 23:05:32,login_success,INFO,DocumentManagement,hr_staff2,192.0.2.63,SRV-FILE-02,Routine authenticated session for hr_staff2.
+2026-11-09 23:05:35,service_check,INFO,FileAudit,hr_staff2,192.0.2.63,SRV-FILE-02,Routine file service health check completed on SRV-FILE-02.
+2026-11-09 23:11:25,file_access,INFO,DocumentManagement,hr_staff2,192.0.2.85,WS-OPS-03,hr_staff2 accessed an authorized departmental document.
+2026-11-09 23:12:26,document_view,INFO,IdentityProvider,analyst3,192.0.2.74,SRV-FILE-02,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 23:25:45,login_success,INFO,IdentityProvider,employee4,192.0.2.63,WS-OPS-03,Routine authenticated session for employee4.
+2026-11-09 23:25:55,service_check,INFO,DocumentManagement,it_support,192.0.2.52,WS-OPS-03,Routine file service health check completed on WS-OPS-03.
+2026-11-09 23:26:13,login_success,INFO,IdentityProvider,employee8,192.0.2.85,WS-HR-02,Routine authenticated session for employee8.
+2026-11-09 23:28:08,document_view,INFO,IdentityProvider,analyst3,192.0.2.85,WS-FIN-05,analyst3 viewed a document permitted by the assigned role.
+2026-11-09 23:33:41,file_access,INFO,DocumentManagement,employee8,192.0.2.52,WS-HR-02,employee8 accessed an authorized departmental document.
+2026-11-09 23:37:42,file_access,INFO,FileAudit,employee4,192.0.2.41,WS-FIN-05,employee4 accessed an authorized departmental document.
+2026-11-09 23:46:00,login_success,INFO,DocumentManagement,employee8,192.0.2.41,WS-OPS-03,Routine authenticated session for employee8.
+2026-11-09 23:47:31,service_check,INFO,IdentityProvider,employee4,192.0.2.63,SRV-DOC-01,Routine file service health check completed on SRV-DOC-01.
+2026-11-09 23:50:37,login_success,INFO,IdentityProvider,hr_staff2,192.0.2.52,WS-FIN-05,Routine authenticated session for hr_staff2.
+2026-11-09 23:50:51,service_check,INFO,DocumentManagement,it_support,192.0.2.52,SRV-FILE-02,Routine file service health check completed on SRV-FILE-02.
+2026-11-09 23:59:57,document_view,INFO,IdentityProvider,hr_staff2,192.0.2.63,WS-HR-02,hr_staff2 viewed a document permitted by the assigned role.
+2026-11-10 00:10:22,login_success,INFO,IdentityProvider,it_support,192.0.2.74,SRV-FILE-02,Routine authenticated session for it_support.
+2026-11-10 00:13:28,login_success,INFO,IdentityProvider,employee4,192.0.2.63,WS-FIN-05,Routine authenticated session for employee4.
+2026-11-10 00:16:53,login_success,INFO,IdentityProvider,analyst3,192.0.2.52,SRV-FILE-02,Routine authenticated session for analyst3.
+2026-11-10 00:19:09,login_success,INFO,IdentityProvider,it_support,192.0.2.52,SRV-DOC-01,Routine authenticated session for it_support.
+2026-11-10 00:22:06,login_success,INFO,IdentityProvider,it_support,192.0.2.63,SRV-FILE-02,Routine authenticated session for it_support.
+2026-11-10 00:25:24,login_success,INFO,IdentityProvider,analyst3,192.0.2.52,WS-OPS-03,Routine authenticated session for analyst3.
+2026-11-10 00:28:47,login_success,INFO,IdentityProvider,analyst3,192.0.2.41,SRV-FILE-02,Routine authenticated session for analyst3.
+2026-11-10 00:31:20,login_success,INFO,IdentityProvider,analyst3,192.0.2.85,WS-OPS-03,Routine authenticated session for analyst3.
+2026-11-10 00:34:41,login_success,INFO,IdentityProvider,analyst3,192.0.2.52,WS-OPS-03,Routine authenticated session for analyst3.
+2026-11-10 00:37:30,login_success,INFO,IdentityProvider,employee4,192.0.2.74,WS-FIN-05,Routine authenticated session for employee4.
+2026-11-10 00:40:43,login_success,INFO,IdentityProvider,analyst3,192.0.2.63,SRV-DOC-01,Routine authenticated session for analyst3.
+2026-11-10 00:43:24,login_success,INFO,IdentityProvider,it_support,192.0.2.41,WS-OPS-03,Routine authenticated session for it_support.
+2026-11-10 00:46:46,login_success,INFO,IdentityProvider,analyst3,192.0.2.41,SRV-FILE-02,Routine authenticated session for analyst3.
+2026-11-10 00:49:56,login_success,INFO,IdentityProvider,hr_staff2,192.0.2.85,WS-FIN-05,Routine authenticated session for hr_staff2.
+2026-11-10 00:52:05,login_success,INFO,IdentityProvider,analyst3,192.0.2.52,WS-HR-02,Routine authenticated session for analyst3.
+2026-11-10 00:55:37,login_success,INFO,IdentityProvider,analyst3,192.0.2.85,WS-OPS-03,Routine authenticated session for analyst3.
+2026-11-10 00:58:59,login_success,INFO,IdentityProvider,employee4,192.0.2.63,SRV-FILE-02,Routine authenticated session for employee4.
+2026-11-10 01:01:20,login_success,INFO,IdentityProvider,employee4,192.0.2.52,WS-HR-02,Routine authenticated session for employee4.
+2026-11-10 01:04:43,login_success,INFO,IdentityProvider,analyst3,192.0.2.74,WS-OPS-03,Routine authenticated session for analyst3.
+2026-11-10 01:07:33,login_success,INFO,IdentityProvider,employee4,192.0.2.52,WS-FIN-05,Routine authenticated session for employee4.

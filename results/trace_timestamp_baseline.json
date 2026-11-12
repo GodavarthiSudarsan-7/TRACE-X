@@ -1,0 +1,46 @@
+{
+  "baseline": "timestamp-only same-event ranking",
+  "score_definition": "negative absolute claimed-timestamp difference",
+  "threshold_selection": "validation F1 only; fixed before test evaluation",
+  "validation": {
+    "split": "validation",
+    "threshold_on_negative_absolute_timestamp_delta": -28.0,
+    "accuracy": 0.984,
+    "precision": 1.0,
+    "recall": 0.824,
+    "f1": 0.9035087719298246,
+    "roc_auc": 0.8716842666666667,
+    "average_precision": 0.8436399636740122,
+    "confusion_matrix_tn_fp_fn_tp": [
+      3750,
+      0,
+      66,
+      309
+    ],
+    "predicted_positive": 309,
+    "total_pairs": 4125,
+    "positive_pairs": 375,
+    "negative_pairs": 3750
+  },
+  "test": {
+    "split": "test",
+    "threshold_on_negative_absolute_timestamp_delta": -28.0,
+    "accuracy": 0.9823030303030303,
+    "precision": 1.0,
+    "recall": 0.8053333333333333,
+    "f1": 0.8921713441654358,
+    "roc_auc": 0.8666837333333335,
+    "average_precision": 0.8386993245837853,
+    "confusion_matrix_tn_fp_fn_tp": [
+      3750,
+      0,
+      73,
+      302
+    ],
+    "predicted_positive": 302,
+    "total_pairs": 4125,
+    "positive_pairs": 375,
+    "negative_pairs": 3750
+  },
+  "limitations": "Synthetic benchmark only. event_id is used only to construct labels. Timestamp proximity is not proof of event identity or causation."
+}

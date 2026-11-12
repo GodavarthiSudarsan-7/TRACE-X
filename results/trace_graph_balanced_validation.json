@@ -1,0 +1,28 @@
+{
+  "model": "graph-only fine-tune with weighted edge cross entropy",
+  "source_checkpoint": "C:\\Projects\\TRACE_X\\TRACE-X\\models\\trace_graph.pt",
+  "saved_checkpoint": "C:\\Projects\\TRACE_X\\TRACE-X\\models\\trace_graph_balanced.pt",
+  "best_epoch": 4,
+  "validation_incidents": 75,
+  "validation_edges": 8250,
+  "validation_positive_edges": 750,
+  "validation_negative_edges": 7500,
+  "validation_average_precision": 0.11205974235626187,
+  "validation_roc_auc": 0.6038072888888888,
+  "validation_selected_threshold": 0.4475689223057644,
+  "validation_precision": 0.11187453323375654,
+  "validation_recall": 0.9986666666666667,
+  "validation_f1": 0.20120886501007387,
+  "validation_confusion_matrix_TN_FP_FN_TP": [
+    [
+      1554,
+      5946
+    ],
+    [
+      1,
+      749
+    ]
+  ],
+  "test_data_used": false,
+  "other_encoder_checkpoints_modified": false
+}

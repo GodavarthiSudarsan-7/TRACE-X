@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRACE-X | Reverse-Engineering-Inspired Investigation</title>
+<style>
+:root{color-scheme:dark;--bg:#080d18;--panel:#111a2b;--card:#1a2940;--border:#26354d;--text:#e8eef9;--muted:#9aabc2;--cyan:#55d6e8;--pink:#ff687d;--amber:#ffc66d;--green:#6fe0a5}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px "Segoe UI",Arial,sans-serif}
+header{padding:17px 22px 12px;border-bottom:1px solid var(--border);background:#0c1423}
+h1{font-size:22px;margin:0 0 5px}header p{color:var(--muted);margin:0}
+.controls,.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+button{font:inherit}.controls button,.tab{background:#1b3553;color:var(--text);border:1px solid #3c628b;border-radius:8px;padding:9px 13px;cursor:pointer}
+.controls button:hover,.tab:hover{background:#285078}.tab.active{background:#16475a;border-color:var(--cyan);color:#fff}
+.progress{height:6px;background:var(--border);border-radius:9px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:0;background:var(--cyan);transition:width .2s}
+main{padding:15px;max-width:1800px;margin:auto}.view{display:none}.view.active{display:block}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:17px;min-width:0}
+.grid2{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:14px;align-items:start}
+h2{font-size:19px;margin:0 0 8px}h3{font-size:16px;margin:0 0 10px}.muted{color:var(--muted);line-height:1.5}
+.metrics{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0}.metric{background:var(--card);padding:11px 14px;border-radius:9px;min-width:125px}.metric b{display:block;font-size:25px}.metric span{font-size:10px;color:var(--muted);letter-spacing:.5px}
+.eventlist{display:grid;gap:7px;max-height:600px;overflow:auto}.eventitem{display:block;width:100%;padding:10px 11px;background:var(--card);border-radius:8px;cursor:pointer;border:1px solid transparent;color:var(--text);text-align:left}.eventitem.active{border-color:var(--cyan);background:#203a57}.eventitem small{display:block;color:var(--muted);margin-top:4px}
+.label{font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:13px;letter-spacing:.5px}.value{margin-top:4px;overflow-wrap:anywhere;line-height:1.5}.reason{background:var(--card);padding:8px;border-radius:6px;margin-top:6px;overflow-wrap:anywhere}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;padding:10px 9px;border-bottom:1px solid var(--border);vertical-align:top}th{color:var(--muted);position:sticky;top:0;background:#17243a}td{overflow-wrap:anywhere}.tablewrap{overflow:auto;max-height:600px;border:1px solid var(--border);border-radius:9px}
+.tag{display:inline-block;padding:3px 7px;border-radius:20px;background:#253953;color:#cfe3f7;font-size:10px}
+.sequence{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+.stage{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px;min-height:120px}
+.stage .num{color:var(--cyan);font-weight:700;font-size:12px}.stage b{display:block;margin:7px 0}.stage small{color:var(--muted);line-height:1.4}
+.graphlayout{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:14px;align-items:start}
+.graphpanel{position:relative;height:620px;padding:0;overflow:hidden}.graphpanel canvas{width:100%;height:100%;display:block}
+.legend{position:absolute;bottom:12px;left:12px;right:12px;background:#0b1422ed;padding:9px 12px;border:1px solid var(--border);border-radius:8px;color:#bdc9da;font-size:12px;display:flex;gap:15px;flex-wrap:wrap}
+.callout{border-left:3px solid var(--amber);background:#1a2940;padding:12px 14px;border-radius:7px;margin-top:13px;line-height:1.5}
+.pill{display:inline-block;border-radius:20px;padding:4px 8px;font-size:10px;background:#23354d;color:#c9d9ec}
+@media(max-width:950px){.grid2,.graphlayout{grid-template-columns:1fr}.sequence{grid-template-columns:repeat(2,minmax(0,1fr))}.graphpanel{height:60vh;min-height:440px}}
+@media(max-width:560px){header{padding:14px}.sequence{grid-template-columns:1fr}main{padding:9px}.graphpanel{min-height:420px}}
+</style>
+</head>
+<body>
+<header>
+<h1>TRACE-X | Evidence-Led Incident Reconstruction</h1>
+<p>Reverse-engineering-inspired behavioural investigation of synthetic cyber incident evidence.</p>
+<div class="controls">
+<button id="play">▶ Play reconstruction</button><button id="step">Step next →</button><button id="reset">↺ Reset</button><button id="showall">Reveal all</button>
+</div>
+<div class="progress"><span id="progressbar"></span></div>
+<nav class="tabs">
+<button class="tab active" data-view="evidence">1 · Evidence Extraction</button>
+<button class="tab" data-view="reconstruction">2 · Behaviour Reconstruction</button>
+<button class="tab" data-view="graphview">3 · Investigation Graph</button>
+</nav>
+</header>
+<main>
+<section id="evidence" class="view active">
+<div class="grid2">
+<div class="panel">
+<h2>Evidence extraction</h2>
+<p class="muted">Original flagged records and the attributes extracted for investigation. Select a row to inspect the supporting evidence.</p>
+<div class="metrics"><div class="metric"><b id="ecount">0</b><span>FLAGGED RECORDS</span></div><div class="metric"><b id="lcount">0</b><span>CANDIDATE LINKS</span></div><div class="metric"><b>15 min</b><span>CORRELATION WINDOW</span></div></div>
+<div class="tablewrap"><table><thead><tr><th>Time / row</th><th>Event</th><th>User</th><th>Source IP</th><th>Host</th><th>Severity</th></tr></thead><tbody id="evidenceRows"></tbody></table></div>
+</div>
+<div class="panel"><h2>Selected evidence</h2><p class="muted">Inspect the original record before drawing a conclusion.</p><div id="evidenceDetail">Select an evidence row.</div></div>
+</div>
+</section>
+
+<section id="reconstruction" class="view">
+<div class="panel">
+<h2>Behaviour reconstruction</h2>
+<p class="muted">A chronological hypothesis assembled from detected indicators. This is an investigative interpretation, not proof of compromise or causation.</p>
+<div class="metrics"><div class="metric"><b id="rCount">0</b><span>OBSERVED EVENTS</span></div><div class="metric"><b>Chronological</b><span>ORDERING METHOD</span></div><div class="metric"><b>Human review</b><span>VALIDATION</span></div></div>
+<div id="sequence" class="sequence"></div>
+<div class="callout"><b>Reconstruction hypothesis:</b> Repeated authentication failures are followed by a successful login, a privilege change, unusual process activity and network/transfer anomalies. Together, these observations are consistent with a possible account-compromise scenario. Verify each step against the original logs and other trusted evidence.</div>
+<div class="callout" style="border-color:var(--cyan)"><b>Reverse-engineering connection:</b> TRACE-X works from observed digital artefacts towards a plausible explanation of system behaviour by extracting attributes, comparing observations, correlating events and reconstructing a sequence. Current implementation analyses logs; it does not disassemble or reverse engineer executable binaries.</div>
+</div>
+</section>
+
+<section id="graphview" class="view">
+<div class="graphlayout">
+<div class="panel graphpanel"><canvas id="graph" aria-label="Candidate relationship graph"></canvas><div class="legend"><span>● <b style="color:var(--pink)">Authentication</b></span><span>● <b style="color:var(--cyan)">Endpoint</b></span><span>● <b style="color:var(--amber)">Network</b></span><span>— Candidate relationship</span></div></div>
+<div class="panel">
+<h2>Investigation graph</h2><p class="muted">Select an event to highlight its direct candidate associations and inspect why they are connected.</p>
+<div class="metrics"><div class="metric"><b id="gcount">0</b><span>FLAGGED EVENTS</span></div><div class="metric"><b id="glinks">0</b><span>CANDIDATE LINKS</span></div></div>
+<div id="graphDetail">Select a node to inspect its evidence.</div>
+</div>
+</div>
+</section>
+</main>
+<script>
+const D={"timeline": [{"sequence": 1, "row": 19, "timestamp": "2026-11-11 09:04:02", "event": "login_failed", "severity": "WARNING", "user": "employee1", "source_ip": "198.51.100.77", "host": "IDP-01", "message": "Failed login attempt for employee1.", "detection_reasons": ["Repeated failed logins for same account/source"], "candidate_links": [{"to_row": 20, "shared_entities": ["user", "source_ip", "host"], "time_gap_seconds": 6, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 22, "shared_entities": ["user", "source_ip", "host"], "time_gap_seconds": 13, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 26, "shared_entities": ["user", "source_ip", "host"], "time_gap_seconds": 59, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 36, "shared_entities": ["user"], "time_gap_seconds": 128, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 46, "shared_entities": ["user"], "time_gap_seconds": 183, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 60, "shared_entities": ["user"], "time_gap_seconds": 301, "relationship": "candidate_temporal_entity_correlation"}]}, {"sequence": 2, "row": 20, "timestamp": "2026-11-11 09:04:08", "event": "login_failed", "severity": "WARNING", "user": "employee1", "source_ip": "198.51.100.77", "host": "IDP-01", "message": "Second failed login attempt for employee1.", "detection_reasons": ["Repeated failed logins for same account/source"], "candidate_links": [{"to_row": 22, "shared_entities": ["user", "source_ip", "host"], "time_gap_seconds": 7, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 26, "shared_entities": ["user", "source_ip", "host"], "time_gap_seconds": 53, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 36, "shared_entities": ["user"], "time_gap_seconds": 122, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 46, "shared_entities": ["user"], "time_gap_seconds": 177, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 60, "shared_entities": ["user"], "time_gap_seconds": 295, "relationship": "candidate_temporal_entity_correlation"}]}, {"sequence": 3, "row": 22, "timestamp": "2026-11-11 09:04:15", "event": "login_failed", "severity": "WARNING", "user": "employee1", "source_ip": "198.51.100.77", "host": "IDP-01", "message": "Third failed login attempt for employee1.", "detection_reasons": ["Repeated failed logins for same account/source"], "candidate_links": [{"to_row": 26, "shared_entities": ["user", "source_ip", "host"], "time_gap_seconds": 46, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 36, "shared_entities": ["user"], "time_gap_seconds": 115, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 46, "shared_entities": ["user"], "time_gap_seconds": 170, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 60, "shared_entities": ["user"], "time_gap_seconds": 288, "relationship": "candidate_temporal_entity_correlation"}]}, {"sequence": 4, "row": 26, "timestamp": "2026-11-11 09:05:01", "event": "login_success", "severity": "WARNING", "user": "employee1", "source_ip": "198.51.100.77", "host": "IDP-01", "message": "Successful login after repeated failures; source is unfamiliar in this simulation.", "detection_reasons": ["Successful login within 10 minutes of repeated failures"], "candidate_links": [{"to_row": 36, "shared_entities": ["user"], "time_gap_seconds": 69, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 46, "shared_entities": ["user"], "time_gap_seconds": 124, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 60, "shared_entities": ["user"], "time_gap_seconds": 242, "relationship": "candidate_temporal_entity_correlation"}]}, {"sequence": 5, "row": 36, "timestamp": "2026-11-11 09:06:10", "event": "privilege_change", "severity": "WARNING", "user": "employee1", "source_ip": "-", "host": "WS-ENG-07", "message": "Unexpected privilege change recorded for employee1.", "detection_reasons": ["Account privilege or permission change"], "candidate_links": [{"to_row": 46, "shared_entities": ["user", "host"], "time_gap_seconds": 55, "relationship": "candidate_temporal_entity_correlation"}, {"to_row": 60, "shared_entities": ["user"], "time_gap_seconds": 173, "relationship": "candidate_temporal_entity_correlation"}]}, {"sequence": 6, "row": 46, "timestamp": "2026-11-11 09:07:05", "event": "process_start", "severity": "WARNING", "user": "employee1", "source_ip": "-", "host": "WS-ENG-07", "message": "Unusual unsigned test process launched in the simulation.", "detection_reasons": ["Potentially unusual endpoint process activity"], "candidate_links": [{"to_row": 60, "shared_entities": ["user"], "time_gap_seconds": 118, "relationship": "candidate_temporal_entity_correlation"}]}, {"sequence": 7, "row": 56, "timestamp": "2026-11-11 09:08:20", "event": "connection_anomaly", "severity": "ALERT", "user": "-", "source_ip": "203.0.113.44", "host": "FW-EDGE-01", "message": "Unusual outbound connection volume observed.", "detection_reasons": ["Unusual outbound network or data-transfer activity"], "candidate_links": [{"to_row": 60, "shared_entities": ["source_ip"], "time_gap_seconds": 43, "relationship": "candidate_temporal_entity_correlation"}]}, {"sequence": 8, "row": 60, "timestamp": "2026-11-11 09:09:03", "event": "transfer_anomaly", "severity": "ALERT", "user": "employee1", "source_ip": "203.0.113.44", "host": "NET-MON-01", "message": "Outbound data transfer exceeds this synthetic environment's baseline.", "detection_reasons": ["Unusual outbound network or data-transfer activity"], "candidate_links": []}]}, E=(D.timeline||[]).slice().sort((a,b)=>String(a.timestamp||'').localeCompare(String(b.timestamp||'')));
+const $=id=>document.getElementById(id);
+let selected=-1,played=-1,timer=null,W=0,H=0,dpr=1;
+const nodes=E.map((e,i)=>({...e,x:0,y:0}));
+const rowIndex=new Map(nodes.map((n,i)=>[String(n.row),i]));
+const links=[];
+E.forEach((e,i)=>(e.candidate_links||[]).forEach(l=>{const j=rowIndex.get(String(l.to_row));if(j!==undefined&&i!==j){const a=Math.min(i,j),b=Math.max(i,j);if(!links.some(x=>x.a===a&&x.b===b))links.push({a,b,shared:l.shared_entities||[],gap:l.time_gap_seconds})}}));
+$('ecount').textContent=nodes.length;$('lcount').textContent=links.length;$('rCount').textContent=nodes.length;$('gcount').textContent=nodes.length;$('glinks').textContent=links.length;
+function esc(v){return String(v??'-').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
+function category(n){return ['login_failed','login_success','privilege_change'].includes(n.event)?'Authentication':(['connection_anomaly','transfer_anomaly'].includes(n.event)?'Network':'Endpoint')}
+function color(n){return category(n)==='Authentication'?'#ff687d':category(n)==='Network'?'#ffc66d':'#55d6e8'}
+function detailHTML(n){return `<div class="label">Event</div><div class="value"><b>${esc(n.event)}</b></div><div class="label">Timestamp · original row</div><div class="value">${esc(n.timestamp)} · row ${esc(n.row)}</div><div class="label">Severity</div><div class="value">${esc(n.severity)}</div><div class="label">User · IP · Host</div><div class="value">${esc(n.user)} · ${esc(n.source_ip)} · ${esc(n.host)}</div><div class="label">Original log message</div><div class="value">${esc(n.message)}</div><div class="label">Detection reasons</div>${(n.detection_reasons||[]).map(x=>`<div class="reason">${esc(x)}</div>`).join('')||'<small>No detection reason recorded.</small>'}<div class="label">Candidate links</div>${(n.candidate_links||[]).map(x=>`<div class="reason">Row ${esc(x.to_row)} · shared ${esc((x.shared_entities||[]).join(', '))} · ${esc(x.time_gap_seconds)} seconds</div>`).join('')||'<small>No entity-backed candidate links.</small>'}`}
+function select(i){if(i<0||i>=nodes.length)return;selected=i;const n=nodes[i];$('evidenceDetail').innerHTML=detailHTML(n);$('graphDetail').innerHTML=detailHTML(n);document.querySelectorAll('.eventitem').forEach((b,k)=>b.classList.toggle('active',k===i));document.querySelectorAll('#evidenceRows tr').forEach((b,k)=>b.style.background=k===i?'#203a57':'');$('progressbar').style.width=((Math.max(played,i)+1)/Math.max(1,nodes.length)*100)+'%';draw()}
+function switchView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===id));if(id==='graphview')resize()}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
+nodes.forEach((n,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${esc(n.timestamp)}<br>row ${esc(n.row)}</td><td>${esc(n.event)}</td><td>${esc(n.user)}</td><td>${esc(n.source_ip)}</td><td>${esc(n.host)}</td><td><span class="tag">${esc(n.severity)}</span></td>`;tr.style.cursor='pointer';tr.addEventListener('click',()=>select(i));$('evidenceRows').appendChild(tr);
+const b=document.createElement('button');b.className='eventitem';b.innerHTML=`<b>${String(i+1).padStart(2,'0')} · ${esc(String(n.event||'event').replaceAll('_',' '))}</b><small>${esc(n.timestamp)} · row ${esc(n.row)}</small>`;b.addEventListener('click',()=>select(i));});
+function buildSequence(){const host=$('sequence');nodes.forEach((n,i)=>{const d=document.createElement('div');d.className='stage';d.innerHTML=`<div class="num">OBSERVATION ${String(i+1).padStart(2,'0')}</div><b>${esc(String(n.event||'event').replaceAll('_',' '))}</b><small>${esc(n.timestamp)}<br>Original row ${esc(n.row)}<br>${esc(category(n))} indicator</small>`;d.style.opacity=i<=played||played===-1?1:.38;d.style.borderColor=i===selected?'var(--cyan)':'var(--border)';host.appendChild(d)})}
+function renderSequence(){const host=$('sequence');host.innerHTML='';buildSequence()}
+function stop(){if(timer){clearInterval(timer);timer=null}$('play').textContent='▶ Play reconstruction'}
+function advance(){if(!nodes.length)return;played=Math.min(nodes.length-1,played+1);select(played);renderSequence();if(played>=nodes.length-1)stop()}
+$('play').addEventListener('click',()=>{if(timer){stop();return}if(!nodes.length)return;if(played>=nodes.length-1)played=-1;$('play').textContent='Ⅱ Pause';advance();if(played<nodes.length-1)timer=setInterval(advance,1400)});
+$('step').addEventListener('click',()=>{stop();if(played<nodes.length-1)advance()});
+$('reset').addEventListener('click',()=>{stop();played=-1;selected=-1;$('progressbar').style.width='0%';$('evidenceDetail').textContent='Select an evidence row.';$('graphDetail').textContent='Select a node to inspect its evidence.';document.querySelectorAll('.eventitem').forEach(b=>b.classList.remove('active'));renderSequence();draw()});
+$('showall').addEventListener('click',()=>{stop();played=nodes.length-1;if(nodes.length)select(nodes.length-1);renderSequence()});
+renderSequence();
+
+const canvas=$('graph'),ctx=canvas.getContext('2d');
+function layout(){const cols=Math.min(4,Math.max(1,Math.ceil(nodes.length/2))),left=65,right=Math.max(left+10,W-65),gap=cols>1?(right-left)/(cols-1):0;nodes.forEach((n,i)=>{const row=Math.floor(i/cols),ix=i%cols,rev=row%2===1?cols-1-ix:ix;n.x=left+rev*gap;n.y=H*(row===0?.34:.70)})}
+function resize(){if(!$('graphview').classList.contains('active'))return;const r=canvas.getBoundingClientRect();W=r.width;H=r.height;dpr=devicePixelRatio||1;canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);layout();draw()}
+function draw(){if(!W||!H)return;ctx.clearRect(0,0,W,H);links.forEach(l=>{const a=nodes[l.a],b=nodes[l.b],related=selected<0||l.a===selected||l.b===selected;ctx.strokeStyle=related?'#55d6e8':'#53627a';ctx.globalAlpha=related?.85:.18;ctx.lineWidth=related?2.2:1.2;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();ctx.globalAlpha=1});
+nodes.forEach((n,i)=>{const connected=selected>=0&&links.some(l=>(l.a===selected&&l.b===i)||(l.b===selected&&l.a===i));const dim=selected>=0&&i!==selected&&!connected;ctx.globalAlpha=dim?.22:1;ctx.beginPath();ctx.arc(n.x,n.y,i===selected?25:20,0,Math.PI*2);ctx.fillStyle=color(n);ctx.fill();ctx.lineWidth=i===selected?4:2;ctx.strokeStyle=i===selected?'#fff':connected?'#55d6e8':'#dce7f5';ctx.stroke();ctx.fillStyle='#07101d';ctx.font='bold 12px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(i+1),n.x,n.y);ctx.fillStyle='#e8eef9';ctx.font='bold 11px Arial';ctx.textBaseline='top';ctx.fillText(String(n.event||'event').replaceAll('_',' '),n.x,n.y+27);ctx.globalAlpha=1})}
+canvas.addEventListener('click',ev=>{const r=canvas.getBoundingClientRect(),x=ev.clientX-r.left,y=ev.clientY-r.top;let best=-1,dist=1e9;nodes.forEach((n,i)=>{const d=Math.hypot(n.x-x,n.y-y);if(d<dist){dist=d;best=i}});if(dist<30)select(best)});
+window.addEventListener('resize',resize);
+</script>
+</body></html>

@@ -1,0 +1,48 @@
+TRACE-X | CYBERATTACK LOG INVESTIGATION
+================================================
+Records analyzed: 150
+Flagged records:  8
+
+KEY FINDINGS
+- Repeated authentication failures were observed for an account/source combination.
+- A successful login followed repeated failures within the configured 10-minute window.
+- An account privilege or permission change was recorded.
+- Potentially unusual endpoint process activity was recorded.
+- Unusual outbound network or data-transfer activity was recorded.
+
+FLAGGED EVENTS
+
+Row 19 | 2026-11-11 09:04:02 | WARNING | login_failed | score=3
+  Failed login attempt for employee1.
+  Reason: Repeated failed logins for same account/source
+
+Row 20 | 2026-11-11 09:04:08 | WARNING | login_failed | score=3
+  Second failed login attempt for employee1.
+  Reason: Repeated failed logins for same account/source
+
+Row 22 | 2026-11-11 09:04:15 | WARNING | login_failed | score=3
+  Third failed login attempt for employee1.
+  Reason: Repeated failed logins for same account/source
+
+Row 26 | 2026-11-11 09:05:01 | WARNING | login_success | score=4
+  Successful login after repeated failures; source is unfamiliar in this simulation.
+  Reason: Successful login within 10 minutes of repeated failures
+
+Row 36 | 2026-11-11 09:06:10 | WARNING | privilege_change | score=4
+  Unexpected privilege change recorded for employee1.
+  Reason: Account privilege or permission change
+
+Row 46 | 2026-11-11 09:07:05 | WARNING | process_start | score=3
+  Unusual unsigned test process launched in the simulation.
+  Reason: Potentially unusual endpoint process activity
+
+Row 56 | 2026-11-11 09:08:20 | ALERT | connection_anomaly | score=4
+  Unusual outbound connection volume observed.
+  Reason: Unusual outbound network or data-transfer activity
+
+Row 60 | 2026-11-11 09:09:03 | ALERT | transfer_anomaly | score=4
+  Outbound data transfer exceeds this synthetic environment's baseline.
+  Reason: Unusual outbound network or data-transfer activity
+
+CAUTION
+Heuristic indicators only. A flagged event is not proof of compromise, malware, command-and-control, or data exfiltration. Validate with source systems and an analyst. No machine-learning model is used by this script.

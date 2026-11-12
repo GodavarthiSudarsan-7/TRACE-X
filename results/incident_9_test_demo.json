@@ -1,0 +1,207 @@
+{
+  "project": "TRACE-X",
+  "split": "test",
+  "incident_id": 9,
+  "evidence_count": 11,
+  "timeline_basis": "claimed timestamps (not learned causal order)",
+  "timeline": [
+    {
+      "evidence_id": "I0009_E0_V1",
+      "claimed_timestamp": 1800090052,
+      "authenticity_estimate": 0.9987,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 0.9999,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 1,
+        "event_order": 0
+      }
+    },
+    {
+      "evidence_id": "I0009_E0_V0",
+      "claimed_timestamp": 1800090081,
+      "authenticity_estimate": 0.9978,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 0.9974,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 1,
+        "event_order": 0
+      }
+    },
+    {
+      "evidence_id": "I0009_E1_V0",
+      "claimed_timestamp": 1800090671,
+      "authenticity_estimate": 0.9983,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 0.9984,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 1,
+        "event_order": 1
+      }
+    },
+    {
+      "evidence_id": "I0009_E1_V1",
+      "claimed_timestamp": 1800090676,
+      "authenticity_estimate": 0.9989,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 0.9988,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 1,
+        "event_order": 1
+      }
+    },
+    {
+      "evidence_id": "I0009_E2_V0",
+      "claimed_timestamp": 1800091190,
+      "authenticity_estimate": 0.9983,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 0.9999,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 1,
+        "event_order": 2
+      }
+    },
+    {
+      "evidence_id": "I0009_E3_V1",
+      "claimed_timestamp": 1800091857,
+      "authenticity_estimate": 0.9992,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 0.9999,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 1,
+        "event_order": 3
+      }
+    },
+    {
+      "evidence_id": "I0009_E3_V0",
+      "claimed_timestamp": 1800091859,
+      "authenticity_estimate": 0.9984,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 0.988,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 1,
+        "event_order": 3
+      }
+    },
+    {
+      "evidence_id": "I0009_E4_V1",
+      "claimed_timestamp": 1800092425,
+      "authenticity_estimate": 0.9989,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 0.9984,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 1,
+        "event_order": 4
+      }
+    },
+    {
+      "evidence_id": "I0009_E4_V0",
+      "claimed_timestamp": 1800092431,
+      "authenticity_estimate": 0.9987,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 1.0,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 1,
+        "event_order": 4
+      }
+    },
+    {
+      "evidence_id": "I0009_E2_V1",
+      "claimed_timestamp": 1800094802,
+      "authenticity_estimate": 0.0,
+      "relevance_prediction": "relevant",
+      "relevance_confidence": 1.0,
+      "review_flag": true,
+      "synthetic_ground_truth": {
+        "forged": 1,
+        "relevant": 1,
+        "event_order": 2
+      }
+    },
+    {
+      "evidence_id": "I0009_DIST",
+      "claimed_timestamp": 1800099999,
+      "authenticity_estimate": 0.998,
+      "relevance_prediction": "distractor",
+      "relevance_confidence": 0.9595,
+      "review_flag": false,
+      "synthetic_ground_truth": {
+        "forged": 0,
+        "relevant": 0,
+        "event_order": -1
+      }
+    }
+  ],
+  "predicted_edges": [],
+  "leave_one_out_sensitivity": [
+    {
+      "removed_evidence": "I0009_DIST",
+      "confidence_change": -0.081238
+    },
+    {
+      "removed_evidence": "I0009_E1_V0",
+      "confidence_change": 0.008925
+    },
+    {
+      "removed_evidence": "I0009_E1_V1",
+      "confidence_change": 0.008887
+    },
+    {
+      "removed_evidence": "I0009_E4_V1",
+      "confidence_change": 0.008878
+    },
+    {
+      "removed_evidence": "I0009_E0_V0",
+      "confidence_change": 0.008846
+    },
+    {
+      "removed_evidence": "I0009_E2_V1",
+      "confidence_change": 0.008687
+    },
+    {
+      "removed_evidence": "I0009_E0_V1",
+      "confidence_change": 0.008202
+    },
+    {
+      "removed_evidence": "I0009_E3_V0",
+      "confidence_change": 0.008199
+    },
+    {
+      "removed_evidence": "I0009_E3_V1",
+      "confidence_change": 0.008121
+    },
+    {
+      "removed_evidence": "I0009_E2_V0",
+      "confidence_change": 0.008052
+    },
+    {
+      "removed_evidence": "I0009_E4_V0",
+      "confidence_change": 0.007653
+    }
+  ],
+  "limitations": [
+    "Synthetic research prototype; not validated for real investigations.",
+    "Authenticity estimates are model scores, not proof of authenticity or forgery.",
+    "Edge class 1 combines related and contradictory candidates; it does not distinguish them.",
+    "Timeline is sorted by claimed timestamps and is not causal reconstruction.",
+    "Leave-one-out changes are sensitivity measures, not causal explanations.",
+    "Synthetic ground truth is included only for transparent test-set evaluation."
+  ]
+}

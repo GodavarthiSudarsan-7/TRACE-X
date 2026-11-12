@@ -1,0 +1,13 @@
+{
+  "incident_count": 500,
+  "split_incidents": {
+    "train": 350,
+    "validation": 75,
+    "test": 75
+  },
+  "evidence_records": {
+    "train": 3850,
+    "validation": 825,
+    "test": 825
+  }
+}

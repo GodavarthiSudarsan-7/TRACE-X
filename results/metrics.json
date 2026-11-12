@@ -1,0 +1,7 @@
+{
+  "role_accuracy": 1.0,
+  "authenticity_accuracy": 1.0,
+  "edge_accuracy": 0.9090909090909091,
+  "test_incidents": 75,
+  "limitations": "Synthetic research prototype; scores are not proof."
+}

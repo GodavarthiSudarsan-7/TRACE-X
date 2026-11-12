@@ -1,0 +1,53 @@
+{
+  "benchmark": "TRACE_Bench_v1",
+  "split": "held-out test",
+  "threshold_source": "validation report",
+  "test_pairs": 4125,
+  "positive_pairs": 375,
+  "negative_pairs": 3750,
+  "modality_masking": {
+    "all": {
+      "roc_auc": 0.999994311111111,
+      "average_precision": 0.9999431863582928,
+      "f1_at_validation_threshold": 0.9907529722589168,
+      "note": "Exploratory modality-masking diagnostic; not a separately trained ablation model."
+    },
+    "text": {
+      "roc_auc": 0.5458449777777779,
+      "average_precision": 0.10150596960893352,
+      "f1_at_validation_threshold": 0.2,
+      "note": "Exploratory modality-masking diagnostic; not a separately trained ablation model."
+    },
+    "image": {
+      "roc_auc": 0.9247555555555556,
+      "average_precision": 0.5014858750170366,
+      "f1_at_validation_threshold": 0.3389830508474576,
+      "note": "Exploratory modality-masking diagnostic; not a separately trained ablation model."
+    },
+    "activity": {
+      "roc_auc": 0.9999978666666666,
+      "average_precision": 0.9999786665655302,
+      "f1_at_validation_threshold": 0.8888888888888888,
+      "note": "Exploratory modality-masking diagnostic; not a separately trained ablation model."
+    },
+    "no_text": {
+      "roc_auc": 0.9999879111111111,
+      "average_precision": 0.9998788956490796,
+      "f1_at_validation_threshold": 0.9669421487603306,
+      "note": "Exploratory modality-masking diagnostic; not a separately trained ablation model."
+    },
+    "no_image": {
+      "roc_auc": 0.9999978666666667,
+      "average_precision": 0.9999786665655301,
+      "f1_at_validation_threshold": 0.9933774834437086,
+      "note": "Exploratory modality-masking diagnostic; not a separately trained ablation model."
+    },
+    "no_activity": {
+      "roc_auc": 0.8692024888888887,
+      "average_precision": 0.3403659041333843,
+      "f1_at_validation_threshold": 0.21564117308798159,
+      "note": "Exploratory modality-masking diagnostic; not a separately trained ablation model."
+    }
+  },
+  "caveat": "Masking modalities at inference is a diagnostic, not a fair substitute for retrained modality ablations. Synthetic shortcut signals may remain."
+}

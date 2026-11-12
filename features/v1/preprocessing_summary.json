@@ -1,0 +1,140 @@
+{
+  "benchmark": "TRACE_Bench_v1",
+  "seed": 20261111,
+  "vocabulary_size": 108,
+  "max_text_length": 48,
+  "vocab_fit_on": "train only",
+  "splits": {
+    "train": {
+      "records": 3850,
+      "forged": 419,
+      "relevant": 3500,
+      "distractors": 350,
+      "unique_incidents": 350
+    },
+    "validation": {
+      "records": 825,
+      "forged": 92,
+      "relevant": 750,
+      "distractors": 75,
+      "unique_incidents": 75
+    },
+    "test": {
+      "records": 825,
+      "forged": 91,
+      "relevant": 750,
+      "distractors": 75,
+      "unique_incidents": 75
+    }
+  },
+  "feature_shapes": {
+    "train": {
+      "text_ids": [
+        3850,
+        48
+      ],
+      "images": [
+        3850,
+        1,
+        32,
+        32
+      ],
+      "activities": [
+        3850,
+        8,
+        6
+      ],
+      "forged": [
+        3850
+      ],
+      "relevant": [
+        3850
+      ],
+      "event_order": [
+        3850
+      ],
+      "timestamps": [
+        3850
+      ],
+      "incident_ids": [
+        3850
+      ],
+      "event_ids": [
+        3850
+      ]
+    },
+    "validation": {
+      "text_ids": [
+        825,
+        48
+      ],
+      "images": [
+        825,
+        1,
+        32,
+        32
+      ],
+      "activities": [
+        825,
+        8,
+        6
+      ],
+      "forged": [
+        825
+      ],
+      "relevant": [
+        825
+      ],
+      "event_order": [
+        825
+      ],
+      "timestamps": [
+        825
+      ],
+      "incident_ids": [
+        825
+      ],
+      "event_ids": [
+        825
+      ]
+    },
+    "test": {
+      "text_ids": [
+        825,
+        48
+      ],
+      "images": [
+        825,
+        1,
+        32,
+        32
+      ],
+      "activities": [
+        825,
+        8,
+        6
+      ],
+      "forged": [
+        825
+      ],
+      "relevant": [
+        825
+      ],
+      "event_order": [
+        825
+      ],
+      "timestamps": [
+        825
+      ],
+      "incident_ids": [
+        825
+      ],
+      "event_ids": [
+        825
+      ]
+    }
+  },
+  "test_used_for_fitting": false,
+  "models_trained": false,
+  "original_files_modified": false
+}

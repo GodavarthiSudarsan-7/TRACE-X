@@ -1,0 +1,31 @@
+{
+  "model": "PairwiseEvidenceNet",
+  "device": "cpu",
+  "training_pairs_total": 19250,
+  "training_pairs_sampled": 8750,
+  "validation": {
+    "threshold": 0.17935968935489655,
+    "accuracy": 0.46206060606060606,
+    "precision": 0.1053082191780822,
+    "recall": 0.656,
+    "f1": 0.18148284765769088,
+    "best_curve_f1": 0.1814828476574525,
+    "roc_auc": 0.5507367111111111,
+    "average_precision": 0.11156969979944033,
+    "confusion_matrix_tn_fp_fn_tp": [
+      1660,
+      2090,
+      129,
+      246
+    ],
+    "predicted_positive": 2336,
+    "total_pairs": 4125,
+    "positive_pairs": 375,
+    "negative_pairs": 3750
+  },
+  "selection_metric": "validation average precision",
+  "test_used_for_training_or_selection": false,
+  "encoders_retrained": false,
+  "original_graph_checkpoint_modified": false,
+  "limitations": "Synthetic benchmark only. event_id is used only for pair labels, not as a model input. Scores are not forensic proof."
+}

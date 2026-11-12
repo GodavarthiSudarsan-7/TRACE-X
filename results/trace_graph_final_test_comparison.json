@@ -1,0 +1,45 @@
+{
+  "test_incidents": 75,
+  "test_edges": 8250,
+  "test_positive_edges": 750,
+  "test_negative_edges": 7500,
+  "thresholds_selected_on_validation": {
+    "original": 0.079,
+    "balanced": 0.4475689223057644
+  },
+  "original": {
+    "average_precision": 0.11783223668037257,
+    "roc_auc": 0.6100810666666665,
+    "precision": 0.11199879409104613,
+    "recall": 0.9906666666666667,
+    "f1": 0.20124593716143013,
+    "confusion_matrix": [
+      [
+        1609,
+        5891
+      ],
+      [
+        7,
+        743
+      ]
+    ]
+  },
+  "balanced": {
+    "average_precision": 0.11206435743927946,
+    "roc_auc": 0.6038265777777778,
+    "precision": 0.11206120612061206,
+    "recall": 0.996,
+    "f1": 0.20145631067961164,
+    "confusion_matrix": [
+      [
+        1581,
+        5919
+      ],
+      [
+        3,
+        747
+      ]
+    ]
+  },
+  "thresholds_tuned_on_test": false
+}

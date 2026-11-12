@@ -1,0 +1,337 @@
+{
+  "tool": "TRACE-X Temporal Evidence Correlator",
+  "records_in_original_log": 150,
+  "flagged_events_correlated": 8,
+  "candidate_relationships": 22,
+  "correlation_window_seconds": 900,
+  "correlation_basis": [
+    "shared user",
+    "shared source IP",
+    "shared host",
+    "within 15 minutes"
+  ],
+  "timeline": [
+    {
+      "sequence": 1,
+      "row": 19,
+      "timestamp": "2026-11-11 09:04:02",
+      "event": "login_failed",
+      "severity": "WARNING",
+      "user": "employee1",
+      "source_ip": "198.51.100.77",
+      "host": "IDP-01",
+      "message": "Failed login attempt for employee1.",
+      "detection_reasons": [
+        "Repeated failed logins for same account/source"
+      ],
+      "candidate_links": [
+        {
+          "to_row": 20,
+          "shared_entities": [
+            "user",
+            "source_ip",
+            "host"
+          ],
+          "time_gap_seconds": 6,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 22,
+          "shared_entities": [
+            "user",
+            "source_ip",
+            "host"
+          ],
+          "time_gap_seconds": 13,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 26,
+          "shared_entities": [
+            "user",
+            "source_ip",
+            "host"
+          ],
+          "time_gap_seconds": 59,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 36,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 128,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 46,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 183,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 60,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 301,
+          "relationship": "candidate_temporal_entity_correlation"
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "row": 20,
+      "timestamp": "2026-11-11 09:04:08",
+      "event": "login_failed",
+      "severity": "WARNING",
+      "user": "employee1",
+      "source_ip": "198.51.100.77",
+      "host": "IDP-01",
+      "message": "Second failed login attempt for employee1.",
+      "detection_reasons": [
+        "Repeated failed logins for same account/source"
+      ],
+      "candidate_links": [
+        {
+          "to_row": 22,
+          "shared_entities": [
+            "user",
+            "source_ip",
+            "host"
+          ],
+          "time_gap_seconds": 7,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 26,
+          "shared_entities": [
+            "user",
+            "source_ip",
+            "host"
+          ],
+          "time_gap_seconds": 53,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 36,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 122,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 46,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 177,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 60,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 295,
+          "relationship": "candidate_temporal_entity_correlation"
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "row": 22,
+      "timestamp": "2026-11-11 09:04:15",
+      "event": "login_failed",
+      "severity": "WARNING",
+      "user": "employee1",
+      "source_ip": "198.51.100.77",
+      "host": "IDP-01",
+      "message": "Third failed login attempt for employee1.",
+      "detection_reasons": [
+        "Repeated failed logins for same account/source"
+      ],
+      "candidate_links": [
+        {
+          "to_row": 26,
+          "shared_entities": [
+            "user",
+            "source_ip",
+            "host"
+          ],
+          "time_gap_seconds": 46,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 36,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 115,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 46,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 170,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 60,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 288,
+          "relationship": "candidate_temporal_entity_correlation"
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "row": 26,
+      "timestamp": "2026-11-11 09:05:01",
+      "event": "login_success",
+      "severity": "WARNING",
+      "user": "employee1",
+      "source_ip": "198.51.100.77",
+      "host": "IDP-01",
+      "message": "Successful login after repeated failures; source is unfamiliar in this simulation.",
+      "detection_reasons": [
+        "Successful login within 10 minutes of repeated failures"
+      ],
+      "candidate_links": [
+        {
+          "to_row": 36,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 69,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 46,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 124,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 60,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 242,
+          "relationship": "candidate_temporal_entity_correlation"
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "row": 36,
+      "timestamp": "2026-11-11 09:06:10",
+      "event": "privilege_change",
+      "severity": "WARNING",
+      "user": "employee1",
+      "source_ip": "-",
+      "host": "WS-ENG-07",
+      "message": "Unexpected privilege change recorded for employee1.",
+      "detection_reasons": [
+        "Account privilege or permission change"
+      ],
+      "candidate_links": [
+        {
+          "to_row": 46,
+          "shared_entities": [
+            "user",
+            "host"
+          ],
+          "time_gap_seconds": 55,
+          "relationship": "candidate_temporal_entity_correlation"
+        },
+        {
+          "to_row": 60,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 173,
+          "relationship": "candidate_temporal_entity_correlation"
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "row": 46,
+      "timestamp": "2026-11-11 09:07:05",
+      "event": "process_start",
+      "severity": "WARNING",
+      "user": "employee1",
+      "source_ip": "-",
+      "host": "WS-ENG-07",
+      "message": "Unusual unsigned test process launched in the simulation.",
+      "detection_reasons": [
+        "Potentially unusual endpoint process activity"
+      ],
+      "candidate_links": [
+        {
+          "to_row": 60,
+          "shared_entities": [
+            "user"
+          ],
+          "time_gap_seconds": 118,
+          "relationship": "candidate_temporal_entity_correlation"
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "row": 56,
+      "timestamp": "2026-11-11 09:08:20",
+      "event": "connection_anomaly",
+      "severity": "ALERT",
+      "user": "-",
+      "source_ip": "203.0.113.44",
+      "host": "FW-EDGE-01",
+      "message": "Unusual outbound connection volume observed.",
+      "detection_reasons": [
+        "Unusual outbound network or data-transfer activity"
+      ],
+      "candidate_links": [
+        {
+          "to_row": 60,
+          "shared_entities": [
+            "source_ip"
+          ],
+          "time_gap_seconds": 43,
+          "relationship": "candidate_temporal_entity_correlation"
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "row": 60,
+      "timestamp": "2026-11-11 09:09:03",
+      "event": "transfer_anomaly",
+      "severity": "ALERT",
+      "user": "employee1",
+      "source_ip": "203.0.113.44",
+      "host": "NET-MON-01",
+      "message": "Outbound data transfer exceeds this synthetic environment's baseline.",
+      "detection_reasons": [
+        "Unusual outbound network or data-transfer activity"
+      ],
+      "candidate_links": []
+    }
+  ],
+  "relationship_summary": {
+    "user": 21,
+    "source_ip": 7,
+    "host": 7
+  },
+  "interpretation": "Relationships are candidate correlations based on shared entities and time proximity. They do not establish causation or prove an attack. Events without shared entities are not linked merely because they occurred close together."
+}
