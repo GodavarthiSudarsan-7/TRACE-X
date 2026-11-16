@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRACE-X | Static PE Analysis</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#080d18;color:#e9effa;font:15px Segoe UI,Arial,sans-serif}
+header,main{max-width:1100px;margin:auto;padding:24px}header{border-bottom:1px solid #26364f}
+h1{margin:0;color:#55d5e5}h2{margin-top:0}.muted{color:#9eacc2}.panel,.card{background:#111c2e;border:1px solid #26364f;border-radius:14px;padding:22px;margin:18px 0}
+input,button{padding:12px;border-radius:8px;border:1px solid #40516b;background:#0b1423;color:#fff}
+button{background:#16a9bd;color:#03121b;font-weight:700;cursor:pointer;border:0}
+a{color:#55d5e5}.error{color:#ff9292}.warning{color:#ffd27a}.good{color:#8be0a1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.metric{background:#0b1423;padding:14px;border-radius:10px;overflow-wrap:anywhere}
+table{width:100%;border-collapse:collapse;margin-top:12px}td,th{text-align:left;padding:10px;border-bottom:1px solid #293951;overflow-wrap:anywhere}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0b1423;padding:14px;border-radius:8px;max-height:360px;overflow:auto}
+</style></head>
+<body>
+<header><h1>TRACE-X / STATIC REVERSE ENGINEERING</h1><p class="muted">Windows executable triage · PE metadata · Hashing · Sections · Imports · Strings</p>
+<a href="/">Dashboard</a> · <a href="/cyberattack">Log investigation</a></header>
+<main>
+<section class="panel"><h2>Analyze a Windows executable</h2>
+<p class="muted">Upload an authorized .exe or .dll file (maximum 10 MB). This phase performs static parsing only.</p>
+<form method="POST" enctype="multipart/form-data" action="/reverse-engineering/analyze">
+<input type="file" name="pefile" accept=".exe,.dll" required> <button type="submit">ANALYZE FILE</button>
+</form>
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+</section>
+{% if result %}
+<section class="panel"><h2>Analysis report</h2>
+<div class="grid">
+<div class="metric">File<b><br>{{ result.filename }}</b></div>
+<div class="metric">Architecture<b><br>{{ result.architecture }}</b></div>
+<div class="metric">Size<b><br>{{ result.file_size_bytes }} bytes</b></div>
+<div class="metric">SHA-256<b><br>{{ result.sha256 }}</b></div>
+<div class="metric">Entry point<b><br>{{ result.entry_point }}</b></div>
+<div class="metric">Imports<b><br>{{ result.imports_count }}</b></div>
+</div>
+<p><b>Compile timestamp (header value):</b> {{ result.compile_timestamp_utc }}</p>
+<p><b>Execution performed:</b> <span class="good">No — static analysis only</span></p>
+<h3>Warnings / triage indicators</h3>
+<ul>{% for item in result.warnings %}<li class="warning">{{ item }}</li>{% else %}<li>No configured static indicators were found.</li>{% endfor %}</ul>
+<h3>PE Sections</h3><table><tr><th>Name</th><th>Virtual size</th><th>Raw size</th><th>Entropy</th><th>Characteristics</th></tr>
+{% for s in result.sections %}<tr><td>{{ s.name }}</td><td>{{ s.virtual_size }}</td><td>{{ s.raw_size }}</td><td>{{ s.entropy }}</td><td>{{ s.characteristics }}</td></tr>{% endfor %}</table>
+<h3>Potentially sensitive imports</h3><pre>{{ result.suspicious_imports|tojson(indent=2) }}</pre>
+<h3>Imported APIs (first 1,000)</h3><pre>{{ result.imports|tojson(indent=2) }}</pre>
+<h3>Exports</h3><pre>{{ result.exports|tojson(indent=2) }}</pre>
+<h3>Extracted strings (limited preview)</h3><pre>{{ result.strings|tojson(indent=2) }}</pre>
+<p class="muted">{{ result.interpretation }}</p>
+<form method="POST" action="/api/reverse-engineering/report">
+<button type="submit">Download JSON report</button>
+</form>
+</section>
+{% endif %}
+</main></body></html>
