@@ -16,10 +16,14 @@ from flask import (
     render_template_string,
     request,
     redirect,
-    send_from_directory
+    send_from_directory,
+    send_file
 )
 
 from torch import nn
+from werkzeug.utils import secure_filename
+
+from reverse_engineering.pe_analyzer import analyze_pe_bytes
 
 
 # ============================================================
@@ -60,6 +64,9 @@ app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024
 # Latest uploaded investigation (single-user local demo state).
 LATEST_CYBER_RESULT = None
 LATEST_CYBER_FILENAME = None
+
+# Latest static PE analysis report (single-user local demo state).
+LATEST_PE_REPORT = None
 
 
 @app.after_request
@@ -1503,7 +1510,7 @@ No flagged evidence.
 <p>
 <a href="/">
 ← Existing TRACE-X dashboard
-</a>
+</a> &nbsp; | &nbsp; <a href="/reverse-engineering">Static Reverse Engineering</a>
 </p>
 
 </main>
@@ -2063,6 +2070,91 @@ def too_large(error):
     }), 413
 
 
+
+
+# ============================================================
+# 21. STATIC WINDOWS PE REVERSE ENGINEERING
+# ============================================================
+
+@app.route("/reverse-engineering", methods=["GET"])
+def reverse_engineering_home():
+    return render_template("reverse_engineering.html")
+
+
+@app.route("/reverse-engineering/analyze", methods=["POST"])
+def reverse_engineering_analyze():
+    global LATEST_PE_REPORT
+
+    uploaded = request.files.get("pefile")
+    if not uploaded or not uploaded.filename:
+        return render_template(
+            "reverse_engineering.html",
+            error="Please select an .exe or .dll file."
+        ), 400
+
+    filename = secure_filename(uploaded.filename)
+    if not filename:
+        return render_template(
+            "reverse_engineering.html",
+            error="The uploaded filename is invalid."
+        ), 400
+
+    try:
+        file_bytes = uploaded.read()
+        result = analyze_pe_bytes(file_bytes, filename)
+        LATEST_PE_REPORT = result
+        return render_template(
+            "reverse_engineering.html",
+            result=result
+        )
+    except (ValueError, RuntimeError) as exc:
+        return render_template(
+            "reverse_engineering.html",
+            error=str(exc)
+        ), 400
+    except Exception:
+        app.logger.exception("Unexpected static PE analysis error")
+        return render_template(
+            "reverse_engineering.html",
+            error="Analysis failed unexpectedly. Check the application log."
+        ), 500
+
+
+@app.route("/api/reverse-engineering/report", methods=["POST"])
+def download_pe_report():
+    if LATEST_PE_REPORT is None:
+        return jsonify({"error": "No PE analysis report is available."}), 404
+
+    report_bytes = json.dumps(
+        LATEST_PE_REPORT, indent=2, ensure_ascii=False
+    ).encode("utf-8")
+
+    return send_file(
+        io.BytesIO(report_bytes),
+        mimetype="application/json",
+        as_attachment=True,
+        download_name="TRACE_X_PE_analysis_report.json"
+    )
+
+
+@app.route("/api/reverse-engineering/status", methods=["GET"])
+def reverse_engineering_status():
+    try:
+        import pefile  # noqa: F401
+        dependency_available = True
+    except ImportError:
+        dependency_available = False
+
+    return jsonify({
+        "available": dependency_available,
+        "supported_formats": [".exe", ".dll"],
+        "max_upload_mb": 10,
+        "analysis_mode": "static_only",
+        "executes_uploaded_file": False,
+        "report_available": LATEST_PE_REPORT is not None
+    })
+
+
 # ============================================================
 # 22. START APPLICATION
 # ============================================================
@@ -2088,6 +2180,11 @@ if __name__ == "__main__":
     print(
         "Investigation graph: "
         "http://127.0.0.1:5000/investigation-graph"
+    )
+
+    print(
+        "Static PE analysis: "
+        "http://127.0.0.1:5000/reverse-engineering"
     )
 
     print("=" * 55)
